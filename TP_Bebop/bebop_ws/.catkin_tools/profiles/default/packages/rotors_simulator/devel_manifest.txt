@@ -1,0 +1,2 @@
+rotors_simulator/rotors_simulator
+/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/devel/.private/rotors_simulator/cmake.lock /home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/devel/./cmake.lock

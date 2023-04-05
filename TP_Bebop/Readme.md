@@ -1,5 +1,8 @@
 # TP Drone Bebop
 
+![](../doc/bebop.jpg)
+
+
 ## Question 1
 
 > Quelles sont les quatre commandes classiques d’un drone quadrirotor ?
@@ -22,5 +25,20 @@ le drone fournit une poussée dans une seule direction. Il utilise donc la gravi
 
 > Quelles sont les caractéristiques techniques de votre drone Bebop 2 ?
 
+- Camera avec stabilization verticale d'une période de 16 millisecondes
+- Capteur ultrason et capteur de pression qui servent à analyser le vol.
+- Gyroscope triple direction
+- Acceleromètre triple direction
+- Magnetometre
+- GNSS pour localiser le drone
 
 
+
+
+
+## Project commands 
+
+```sh
+
+
+```

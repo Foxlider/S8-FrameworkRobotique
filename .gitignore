@@ -49,3 +49,5 @@ qtcreator-*
 
 # Catkin custom files
 CATKIN_IGNORE
+
+TP_Bebop/drone_git/
