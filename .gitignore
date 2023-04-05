@@ -51,3 +51,7 @@ qtcreator-*
 CATKIN_IGNORE
 
 TP_Bebop/drone_git/
+
+TP_Bebop/bebop_ws/src/bebop_autonomy/
+
+TP_Bebop/bebop_ws/src/parrot_arsdk/

@@ -32,8 +32,38 @@ le drone fournit une poussée dans une seule direction. Il utilise donc la gravi
 - Magnetometre
 - GNSS pour localiser le drone
 
+## Question 3 :
+> Quels topics correspondent à la commande du drone ?
 
 
+
+
+> Quel est respectivement le type de chacun des messages associés ?
+
+En connaissant les topics correspondant à la commande du drone, on peut afficher le type de message qu'ils utilisent pour communiquer avec `rostopic type [nom du topic]`.
+
+## Question 4 :
+Nous voulons afficher une courbe représentant l’altitude du drone en temps réel.
+> Cette altitude est disponible sur un topic. Quel serait alors le type de « plugin » rqt à
+utiliser ?
+
+On peut utiliser **rqt_plot** pour analyser l'évolution de l'altitude en tems réel.
+
+*NB : Aidez-vous de la documentation de bebop_autonomy afin de comprendre les commandes à envoyer ainsi que les types de messages à publier.*
+
+# Partie Mini-Projet
+
+## Question 5 :
+- Proposez une spécification de commande de votre drone depuis le Joystick
+
+## Question 6 :
+
+> Créez dans le package « mini_projet » un nœud ROS « control.py » (si possible
+en utilisant une approche en classes) capable de piloter un bebop à partir du
+Joystick en suivant votre spécification.
+
+> N’oubliez pas de coder l’atterrissage et le reset afin de ne pas avoir de drones
+incontrôlables.
 
 
 ## Project commands 
