@@ -35,21 +35,29 @@ le drone fournit une poussée dans une seule direction. Il utilise donc la gravi
 ## Question 3 :
 > Quels topics correspondent à la commande du drone ?
 
+Dans la documentation, on trouve les topics :  
+| Topic | Fonction | Type de message |
+|--|--| -- |
+| Takeoff | Fait décoller le drone | std_msgs/Empty |
+| Land | Fait atterir le drone | std_msgs/Empty
+| Emergency | Arrêt d'urgence | std_msgs/Empty
+| cmd_vel | Controle la vitesse et la direction | geometry_msgs/Twist 
 
-
-
-> Quel est respectivement le type de chacun des messages associés ?
 
 En connaissant les topics correspondant à la commande du drone, on peut afficher le type de message qu'ils utilisent pour communiquer avec `rostopic type [nom du topic]`.
 
 ## Question 4 :
+
+En utilisant les commandes `rosrun image_view image_view image := image_raw` et `rqt_image_view`, on peut visualiser en
+ temps réel la caméra du drone et afficher la tête de Mathis.
+
+ ![](../doc/Mathis.png) (trouvable sur discord)
+
 Nous voulons afficher une courbe représentant l’altitude du drone en temps réel.
 > Cette altitude est disponible sur un topic. Quel serait alors le type de « plugin » rqt à
 utiliser ?
 
 On peut utiliser **rqt_plot** pour analyser l'évolution de l'altitude en tems réel.
-
-*NB : Aidez-vous de la documentation de bebop_autonomy afin de comprendre les commandes à envoyer ainsi que les types de messages à publier.*
 
 # Partie Mini-Projet
 

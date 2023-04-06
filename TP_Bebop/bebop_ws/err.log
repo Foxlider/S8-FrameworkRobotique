@@ -1,5 +1,5 @@
-[1m[33m___________________________________________________________________________________________[0m[0m
-[1m[33mWarnings[0m  [33m <<[0m [36mparrot_arsdk[0m:[34mcheck[0m [1m[33m/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/logs/parrot_arsdk/build.check.000.log[0m[0m
+[1m[33m__________________________________________________________________________________________________________________________________________________________________________________[0m[0m
+[1m[33mWarnings[0m  [33m <<[0m [36mmav_msgs[0m:[34mcheck[0m [1m[33m/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/logs/mav_msgs/build.check.007.log[0m[0m                                                 
 [0mCMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
   Compatibility with CMake < 2.8.12 will be removed from a future version of
   CMake.
@@ -21,183 +21,793 @@
     CMAKE_PROJECT_VERSION_PATCH
 This warning is for project developers.  Use -Wno-dev to suppress it.
 [0m
-[33mCMake Warning (dev) at /usr/share/cmake/Modules/ExternalProject.cmake:3091 (message):
-  The DOWNLOAD_EXTRACT_TIMESTAMP option was not given and policy CMP0135 is
-  not set.  The policy's OLD behavior will be used.  When using a URL
-  download, the timestamps of extracted files should preferably be that of
-  the time of extraction, otherwise code that depends on the extracted
-  contents might not be rebuilt if the URL changes.  The OLD behavior
-  preserves the timestamps from the archive instead, but this is usually not
-  what you want.  Update your project to the NEW behavior or specify the
-  DOWNLOAD_EXTRACT_TIMESTAMP option with a value of true to avoid this
-  robustness issue.
-[36mCall Stack (most recent call first):[0m
-  /usr/share/cmake/Modules/ExternalProject.cmake:4208 (_ep_add_download_command)
-  CMakeLists.txt:31 (ExternalProject_Add)
+[1m[30mcd /home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/build/mav_msgs; catkin build --get-env mav_msgs | catkin env -si  /usr/bin/make cmake_check_build_system; cd -[0m
+[0m
+[33m..................................................................................................................................................................................[0m[0m
+[1m[33m__________________________________________________________________________________________________________________________________________________________________________________[0m[0m
+[1m[33mWarnings[0m  [33m <<[0m [36mmav_state_machine_msgs[0m:[34mcheck[0m [1m[33m/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/logs/mav_state_machine_msgs/build.check.007.log[0m[0m                     
+[0mCMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 2.8.12 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+[0m
+[33mCMake Warning (dev) at CMakeLists.txt:2 (project):
+  Policy CMP0048 is not set: project() command manages VERSION variables.
+  Run "cmake --help-policy CMP0048" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+
+  The following variable(s) would be set to empty:
+
+    CMAKE_PROJECT_VERSION
+    CMAKE_PROJECT_VERSION_MAJOR
+    CMAKE_PROJECT_VERSION_MINOR
+    CMAKE_PROJECT_VERSION_PATCH
 This warning is for project developers.  Use -Wno-dev to suppress it.
 [0m
-[1m[30mcd /home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/build/parrot_arsdk; catkin build --get-env parrot_arsdk | catkin env -si  /usr/bin/make cmake_check_build_system; cd -[0m
+[1m[30mcd /home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/build/mav_state_machine_msgs; catkin build --get-env mav_state_machine_msgs | catkin env -si  /usr/bin/make cmake_check_build_system; cd -[0m
 [0m
-[33m...........................................................................................[0m[0m
-[1m[31m___________________________________________________________________________________________[0m[0m
-[1m[31mErrors[0m    [31m <<[0m [36mparrot_arsdk[0m:[34mmake[0m [1m[31m/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/logs/parrot_arsdk/build.make.001.log[0m[0m
-[I] Starting task 'build-sdk'
-[I] In '/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/build/parrot_arsdk/arsdk/src/ARSDKBuildUtils': ALCHEMY_TARGET_CONFIG_DIR="/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/build/parrot_arsdk/arsdk/src/ARSDKBuildUtils/products/arsdk/native/config" ALCHEMY_TARGET_OUT="/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/build/parrot_arsdk/arsdk/src/ARSDKBuildUtils/out/arsdk-native" ALCHEMY_TARGET_PRODUCT="arsdk" ALCHEMY_TARGET_PRODUCT_VARIANT="native" ALCHEMY_TARGET_SCAN_ADD_DIRS=" /home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/build/parrot_arsdk/arsdk/src/ARSDKBuildUtils/packages" ALCHEMY_TARGET_SCAN_PRUNE_DIRS=" /home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/build/parrot_arsdk/arsdk/src/ARSDKBuildUtils" ALCHEMY_USE_COLORS="0" ALCHEMY_WORKSPACE_DIR="/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/build/parrot_arsdk/arsdk/src/ARSDKBuildUtils" PARROT_BUILD_PROP_GROUP="drones" PARROT_BUILD_PROP_PRODUCT="arsdk" PARROT_BUILD_PROP_PROJECT="arsdk" PARROT_BUILD_PROP_UID="arsdk-native-20230405-1146-0.0.0" PARROT_BUILD_PROP_VARIANT="native" PARROT_BUILD_PROP_VERSION="0.0.0" /home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/build/parrot_arsdk/arsdk/src/ARSDKBuildUtils/build/alchemy/scripts/alchemake -j 16 all
-[W] Not using job control
-make[3]: warning: -j16 forced in submake: resetting jobserver mode.
-Scanning /home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/build/parrot_arsdk/arsdk/src/ARSDKBuildUtils/packages for makefiles...
-egrep: warning: egrep is obsolescent; using grep -E
-[01m[Klinkhash.c:[m[K In function '[01m[Khashlittle[m[K':
-[01m[Klinkhash.c:379:15:[m[K [01;35m[Kwarning: [m[Kthis statement may fall through [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wimplicit-fallthrough=-Wimplicit-fallthrough=]8;;[m[K]
-  379 |     case 12: [01;35m[Kc+=((uint32_t)k[11])<<24[m[K;
-      |              [01;35m[K~^~~~~~~~~~~~~~~~~~~~~~~[m[K
-[01m[Klinkhash.c:380:5:[m[K [01;36m[Knote: [m[Khere
-  380 |     [01;36m[Kcase[m[K 11: c+=((uint32_t)k[10])<<16;
-      |     [01;36m[K^~~~[m[K
-[01m[Klinkhash.c:380:15:[m[K [01;35m[Kwarning: [m[Kthis statement may fall through [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wimplicit-fallthrough=-Wimplicit-fallthrough=]8;;[m[K]
-  380 |     case 11: [01;35m[Kc+=((uint32_t)k[10])<<16[m[K;
-      |              [01;35m[K~^~~~~~~~~~~~~~~~~~~~~~~[m[K
-[01m[Klinkhash.c:381:5:[m[K [01;36m[Knote: [m[Khere
-  381 |     [01;36m[Kcase[m[K 10: c+=((uint32_t)k[9])<<8;
-      |     [01;36m[K^~~~[m[K
-[01m[Klinkhash.c:381:15:[m[K [01;35m[Kwarning: [m[Kthis statement may fall through [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wimplicit-fallthrough=-Wimplicit-fallthrough=]8;;[m[K]
-  381 |     case 10: [01;35m[Kc+=((uint32_t)k[9])<<8[m[K;
-      |              [01;35m[K~^~~~~~~~~~~~~~~~~~~~~[m[K
-[01m[Klinkhash.c:382:5:[m[K [01;36m[Knote: [m[Khere
-  382 |     [01;36m[Kcase[m[K 9 : c+=k[8];
-      |     [01;36m[K^~~~[m[K
-[01m[Klinkhash.c:382:15:[m[K [01;35m[Kwarning: [m[Kthis statement may fall through [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wimplicit-fallthrough=-Wimplicit-fallthrough=]8;;[m[K]
-  382 |     case 9 : [01;35m[Kc+=k[8][m[K;
-      |              [01;35m[K~^~~~~~[m[K
-[01m[Klinkhash.c:383:5:[m[K [01;36m[Knote: [m[Khere
-  383 |     [01;36m[Kcase[m[K 8 : b+=((uint32_t)k[7])<<24;
-      |     [01;36m[K^~~~[m[K
-[01m[Klinkhash.c:383:15:[m[K [01;35m[Kwarning: [m[Kthis statement may fall through [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wimplicit-fallthrough=-Wimplicit-fallthrough=]8;;[m[K]
-  383 |     case 8 : [01;35m[Kb+=((uint32_t)k[7])<<24[m[K;
-      |              [01;35m[K~^~~~~~~~~~~~~~~~~~~~~~[m[K
-[01m[Klinkhash.c:384:5:[m[K [01;36m[Knote: [m[Khere
-  384 |     [01;36m[Kcase[m[K 7 : b+=((uint32_t)k[6])<<16;
-      |     [01;36m[K^~~~[m[K
-[01m[Klinkhash.c:384:15:[m[K [01;35m[Kwarning: [m[Kthis statement may fall through [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wimplicit-fallthrough=-Wimplicit-fallthrough=]8;;[m[K]
-  384 |     case 7 : [01;35m[Kb+=((uint32_t)k[6])<<16[m[K;
-      |              [01;35m[K~^~~~~~~~~~~~~~~~~~~~~~[m[K
-[01m[Klinkhash.c:385:5:[m[K [01;36m[Knote: [m[Khere
-  385 |     [01;36m[Kcase[m[K 6 : b+=((uint32_t)k[5])<<8;
-      |     [01;36m[K^~~~[m[K
-[01m[Klinkhash.c:385:15:[m[K [01;35m[Kwarning: [m[Kthis statement may fall through [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wimplicit-fallthrough=-Wimplicit-fallthrough=]8;;[m[K]
-  385 |     case 6 : [01;35m[Kb+=((uint32_t)k[5])<<8[m[K;
-      |              [01;35m[K~^~~~~~~~~~~~~~~~~~~~~[m[K
-[01m[Klinkhash.c:386:5:[m[K [01;36m[Knote: [m[Khere
-  386 |     [01;36m[Kcase[m[K 5 : b+=k[4];
-      |     [01;36m[K^~~~[m[K
-[01m[Klinkhash.c:386:15:[m[K [01;35m[Kwarning: [m[Kthis statement may fall through [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wimplicit-fallthrough=-Wimplicit-fallthrough=]8;;[m[K]
-  386 |     case 5 : [01;35m[Kb+=k[4][m[K;
-      |              [01;35m[K~^~~~~~[m[K
-[01m[Klinkhash.c:387:5:[m[K [01;36m[Knote: [m[Khere
-  387 |     [01;36m[Kcase[m[K 4 : a+=((uint32_t)k[3])<<24;
-      |     [01;36m[K^~~~[m[K
-[01m[Klinkhash.c:387:15:[m[K [01;35m[Kwarning: [m[Kthis statement may fall through [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wimplicit-fallthrough=-Wimplicit-fallthrough=]8;;[m[K]
-  387 |     case 4 : [01;35m[Ka+=((uint32_t)k[3])<<24[m[K;
-      |              [01;35m[K~^~~~~~~~~~~~~~~~~~~~~~[m[K
-[01m[Klinkhash.c:388:5:[m[K [01;36m[Knote: [m[Khere
-  388 |     [01;36m[Kcase[m[K 3 : a+=((uint32_t)k[2])<<16;
-      |     [01;36m[K^~~~[m[K
-[01m[Klinkhash.c:388:15:[m[K [01;35m[Kwarning: [m[Kthis statement may fall through [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wimplicit-fallthrough=-Wimplicit-fallthrough=]8;;[m[K]
-  388 |     case 3 : [01;35m[Ka+=((uint32_t)k[2])<<16[m[K;
-      |              [01;35m[K~^~~~~~~~~~~~~~~~~~~~~~[m[K
-[01m[Klinkhash.c:389:5:[m[K [01;36m[Knote: [m[Khere
-  389 |     [01;36m[Kcase[m[K 2 : a+=((uint32_t)k[1])<<8;
-      |     [01;36m[K^~~~[m[K
-[01m[Klinkhash.c:389:15:[m[K [01;35m[Kwarning: [m[Kthis statement may fall through [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wimplicit-fallthrough=-Wimplicit-fallthrough=]8;;[m[K]
-  389 |     case 2 : [01;35m[Ka+=((uint32_t)k[1])<<8[m[K;
-      |              [01;35m[K~^~~~~~~~~~~~~~~~~~~~~[m[K
-[01m[Klinkhash.c:390:5:[m[K [01;36m[Knote: [m[Khere
-  390 |     [01;36m[Kcase[m[K 1 : a+=k[0];
-      |     [01;36m[K^~~~[m[K
-Traceback (most recent call last):
-  File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
-    return _run_code(code, main_globals, None,
-  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
-    exec(code, run_globals)
-  File "/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/build/parrot_arsdk/arsdk/src/ARSDKBuildUtils/out/arsdk-native/staging-host/usr/lib/mavgen/pymavlink/tools/mavgen.py", line 30, in <module>
-    mavgen.mavgen(args, args.definitions)
-  File "/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/build/parrot_arsdk/arsdk/src/ARSDKBuildUtils/out/arsdk-native/staging-host/usr/lib/mavgen/pymavlink/generator/mavgen.py", line 78, in mavgen
-    xml.append(mavparse.MAVXML(fname, opts.wire_protocol))
-  File "/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/build/parrot_arsdk/arsdk/src/ARSDKBuildUtils/out/arsdk-native/staging-host/usr/lib/mavgen/pymavlink/generator/mavparse.py", line 357, in __init__
-    m.crc_extra = message_checksum(m)
-  File "/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/build/parrot_arsdk/arsdk/src/ARSDKBuildUtils/out/arsdk-native/staging-host/usr/lib/mavgen/pymavlink/generator/mavparse.py", line 384, in message_checksum
-    crc.accumulate_str(msg.name + ' ')
-  File "/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/build/parrot_arsdk/arsdk/src/ARSDKBuildUtils/out/arsdk-native/staging-host/usr/lib/mavgen/pymavlink/generator/mavcrc.py", line 28, in accumulate_str
-    bytes.fromstring(buf)
-AttributeError: 'array.array' object has no attribute 'fromstring'
-make[3]: *** [/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/build/parrot_arsdk/arsdk/src/ARSDKBuildUtils/build/alchemy/main.mk:306: /home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/build/parrot_arsdk/arsdk/src/ARSDKBuildUtils/out/arsdk-native/build/libARMavlink/parrot.xml.done] Error 1
-make[3]: *** Waiting for unfinished jobs....
-[01m[Kjson_object.c:[m[K In function '[01m[Kjson_object_get_int64[m[K':
-[01m[Kjson_object.c:554:12:[m[K [01;35m[Kwarning: [m[Kthis statement may fall through [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wimplicit-fallthrough=-Wimplicit-fallthrough=]8;;[m[K]
-  554 |         if [01;35m[K([m[Kjson_parse_int64(jso->o.c_string.str, &cint) == 0) return cint;
-      |            [01;35m[K^[m[K
-[01m[Kjson_object.c:555:3:[m[K [01;36m[Knote: [m[Khere
-  555 |   [01;36m[Kdefault[m[K:
-      |   [01;36m[K^~~~~~~[m[K
-[01m[Kjson_tokener.c:[m[K In function '[01m[Kjson_tokener_parse_ex[m[K':
-[01m[Kjson_tokener.c:303:12:[m[K [01;35m[Kwarning: [m[Kthis statement may fall through [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wimplicit-fallthrough=-Wimplicit-fallthrough=]8;;[m[K]
-  303 |         if [01;35m[K([m[Ktok->flags & JSON_TOKENER_STRICT) {
-      |            [01;35m[K^[m[K
-[01m[Kjson_tokener.c:308:7:[m[K [01;36m[Knote: [m[Khere
-  308 |       [01;36m[Kcase[m[K '"':
-      |       [01;36m[K^~~~[m[K
-[01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/build/parrot_arsdk/arsdk/src/ARSDKBuildUtils/packages/libtar/lib/handle.c:50:35:[m[K [01;35m[Kwarning: [m[Kinitialization of ‘[01m[Kintptr_t (*)(const char *, int, ...)[m[K’ {aka ‘[01m[Klong int (*)(const char *, int, ...)[m[K’} from incompatible pointer type ‘[01m[Kintptr_t (*)(const char *, int,  int)[m[K’ {aka ‘[01m[Klong int (*)(const char *, int,  int)[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wincompatible-pointer-types-Wincompatible-pointer-types]8;;[m[K]
-   50 | static tartype_t default_type = { [01;35m[Ktar_openfunc[m[K, tar_closefunc,
-      |                                   [01;35m[K^~~~~~~~~~~~[m[K
-[01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/build/parrot_arsdk/arsdk/src/ARSDKBuildUtils/packages/libtar/lib/handle.c:50:35:[m[K [01;36m[Knote: [m[K(near initialization for ‘[01m[Kdefault_type.openfunc[m[K’)
-ar: `u' modifier ignored since `D' is the default (see `U')
-ar: `u' modifier ignored since `D' is the default (see `U')
-ar: `u' modifier ignored since `D' is the default (see `U')
-ar: `u' modifier ignored since `D' is the default (see `U')
-ar: `u' modifier ignored since `D' is the default (see `U')
-In file included from [01m[K/usr/include/string.h:535[m[K,
-                 from [01m[K../include/string.h:6[m[K,
-                 from [01m[Kd1_both.c:118[m[K:
-In function '[01m[Kmemcpy[m[K',
-    inlined from '[01m[Kdtls1_retransmit_message[m[K' at [01m[Kd1_both.c:1276:3[m[K:
-[01m[K/usr/include/bits/string_fortified.h:29:10:[m[K [01;35m[Kwarning: [m[K'[01m[K*(long unsigned int *)(&save_write_sequence[0])[m[K' may be used uninitialized [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmaybe-uninitialized-Wmaybe-uninitialized]8;;[m[K]
-   29 |   return [01;35m[K__builtin___memcpy_chk (__dest, __src, __len,[m[K
-      |          [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
-   30 | [01;35m[K                                 __glibc_objsize0 (__dest))[m[K;
-      |                                  [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
-[01m[Kd1_both.c:[m[K In function '[01m[Kdtls1_retransmit_message[m[K':
-[01m[Kd1_both.c:1206:23:[m[K [01;36m[Knote: [m[K'[01m[K*(long unsigned int *)(&save_write_sequence[0])[m[K' was declared here
- 1206 |         unsigned char [01;36m[Ksave_write_sequence[m[K[8];
-      |                       [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
-In file included from [01m[K/usr/include/string.h:535[m[K,
-                 from [01m[K../include/string.h:6[m[K,
-                 from [01m[Kssl_locl.h:150[m[K,
-                 from [01m[Ks3_cbc.c:56[m[K:
-In function '[01m[Kmemcpy[m[K',
-    inlined from '[01m[Kssl3_cbc_digest_record[m[K' at [01m[Ks3_cbc.c:584:3[m[K:
-[01m[K/usr/include/bits/string_fortified.h:29:10:[m[K [01;35m[Kwarning: [m[K'[01m[K__builtin___memcpy_chk[m[K' forming offset 128 is out of the bounds [0, 128] of object '[01m[Khmac_pad[m[K' with type '[01m[Kunsigned char[128][m[K' [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Warray-bounds-Warray-bounds]8;;[m[K]
-   29 |   return [01;35m[K__builtin___memcpy_chk (__dest, __src, __len,[m[K
-      |          [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
-   30 | [01;35m[K                                 __glibc_objsize0 (__dest))[m[K;
-      |                                  [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
-[01m[Ks3_cbc.c:[m[K In function '[01m[Kssl3_cbc_digest_record[m[K':
-[01m[Ks3_cbc.c:438:23:[m[K [01;36m[Knote: [m[K'[01m[Khmac_pad[m[K' declared here
-  438 |         unsigned char [01;36m[Khmac_pad[m[K[MAX_HASH_BLOCK_SIZE];
-      |                       [01;36m[K^~~~~~~~[m[K
-In function '[01m[Kmemcpy[m[K',
-    inlined from '[01m[Kssl3_cbc_digest_record[m[K' at [01m[Ks3_cbc.c:613:4[m[K:
-[01m[K/usr/include/bits/string_fortified.h:29:10:[m[K [01;35m[Kwarning: [m[K'[01m[K__builtin___memcpy_chk[m[K' offset [64, 128] is out of the bounds [0, 13] [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Warray-bounds-Warray-bounds]8;;[m[K]
-   29 |   return [01;35m[K__builtin___memcpy_chk (__dest, __src, __len,[m[K
-      |          [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
-   30 | [01;35m[K                                 __glibc_objsize0 (__dest))[m[K;
-      |                                  [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
-ar: `u' modifier ignored since `D' is the default (see `U')
-ar: `u' modifier ignored since `D' is the default (see `U')
-[E] Task 'build-sdk' failed (Command failed (returncode=2))
-make[2]: *** [CMakeFiles/ARSDKBuildUtils.dir/build.make:86: arsdk/src/ARSDKBuildUtils-stamp/ARSDKBuildUtils-build] Error 1
-make[1]: *** [CMakeFiles/Makefile2:309: CMakeFiles/ARSDKBuildUtils.dir/all] Error 2
-make: *** [Makefile:146: all] Error 2
-[1m[30mcd /home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/build/parrot_arsdk; catkin build --get-env parrot_arsdk | catkin env -si  /usr/bin/make --jobserver-auth=6,7; cd -[0m
+[33m..................................................................................................................................................................................[0m[0m
+[1m[33m__________________________________________________________________________________________________________________________________________________________________________________[0m[0m
+[1m[33mWarnings[0m  [33m <<[0m [36mmav_system_msgs[0m:[34mcheck[0m [1m[33m/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/logs/mav_system_msgs/build.check.007.log[0m[0m                                   
+[0mCMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 2.8.12 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
 [0m
-[31m...........................................................................................[0m[0m
-[1m[31mFailed[0m    [31m <<[0m [36mparrot_arsdk[0m:[34mmake                     [0m[ [33mExited with code [1m[33m2[0m ][0m                 
+[33mCMake Warning (dev) at CMakeLists.txt:2 (project):
+  Policy CMP0048 is not set: project() command manages VERSION variables.
+  Run "cmake --help-policy CMP0048" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+
+  The following variable(s) would be set to empty:
+
+    CMAKE_PROJECT_VERSION
+    CMAKE_PROJECT_VERSION_MAJOR
+    CMAKE_PROJECT_VERSION_MINOR
+    CMAKE_PROJECT_VERSION_PATCH
+This warning is for project developers.  Use -Wno-dev to suppress it.
+[0m
+[1m[30mcd /home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/build/mav_system_msgs; catkin build --get-env mav_system_msgs | catkin env -si  /usr/bin/make cmake_check_build_system; cd -[0m
+[0m
+[33m..................................................................................................................................................................................[0m[0m
+[1m[33m__________________________________________________________________________________________________________________________________________________________________________________[0m[0m
+[1m[33mWarnings[0m  [33m <<[0m [36mrotors_control[0m:[34mcheck[0m [1m[33m/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/logs/rotors_control/build.check.007.log[0m[0m                                     
+[0mCMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 2.8.12 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+[0m
+[33mCMake Warning (dev) at CMakeLists.txt:2 (project):
+  Policy CMP0048 is not set: project() command manages VERSION variables.
+  Run "cmake --help-policy CMP0048" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+
+  The following variable(s) would be set to empty:
+
+    CMAKE_PROJECT_VERSION
+    CMAKE_PROJECT_VERSION_MAJOR
+    CMAKE_PROJECT_VERSION_MINOR
+    CMAKE_PROJECT_VERSION_PATCH
+This warning is for project developers.  Use -Wno-dev to suppress it.
+[0m
+[33mCMake Warning at /opt/ros/noetic/share/cmake_modules/cmake/Modules/FindEigen.cmake:62 (message):
+  The FindEigen.cmake Module in the cmake_modules package is deprecated.
+
+  Please use the FindEigen3.cmake Module provided with Eigen.  Change
+  instances of find_package(Eigen) to find_package(Eigen3).  Check the
+  FindEigen3.cmake Module for the resulting CMake variable names.
+
+[36mCall Stack (most recent call first):[0m
+  CMakeLists.txt:15 (find_package)
+
+[0m
+[1m[30mcd /home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/build/rotors_control; catkin build --get-env rotors_control | catkin env -si  /usr/bin/make cmake_check_build_system; cd -[0m
+[0m
+[33m..................................................................................................................................................................................[0m[0m
+[1m[33m__________________________________________________________________________________________________________________________________________________________________________________[0m[0m
+[1m[33mWarnings[0m  [33m <<[0m [36mmav_planning_msgs[0m:[34mcheck[0m [1m[33m/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/logs/mav_planning_msgs/build.check.007.log[0m[0m                               
+[0mCMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 2.8.12 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+[0m
+[33mCMake Warning (dev) at CMakeLists.txt:2 (project):
+  Policy CMP0048 is not set: project() command manages VERSION variables.
+  Run "cmake --help-policy CMP0048" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+
+  The following variable(s) would be set to empty:
+
+    CMAKE_PROJECT_VERSION
+    CMAKE_PROJECT_VERSION_MAJOR
+    CMAKE_PROJECT_VERSION_MINOR
+    CMAKE_PROJECT_VERSION_PATCH
+This warning is for project developers.  Use -Wno-dev to suppress it.
+[0m
+[1m[30mcd /home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/build/mav_planning_msgs; catkin build --get-env mav_planning_msgs | catkin env -si  /usr/bin/make cmake_check_build_system; cd -[0m
+[0m
+[33m..................................................................................................................................................................................[0m[0m
+[1m[33m__________________________________________________________________________________________________________________________________________________________________________________[0m[0m
+[1m[33mWarnings[0m  [33m <<[0m [36mrotors_joy_interface[0m:[34mcheck[0m [1m[33m/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/logs/rotors_joy_interface/build.check.007.log[0m[0m                         
+[0mCMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 2.8.12 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+[0m
+[33mCMake Warning (dev) at CMakeLists.txt:2 (project):
+  Policy CMP0048 is not set: project() command manages VERSION variables.
+  Run "cmake --help-policy CMP0048" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+
+  The following variable(s) would be set to empty:
+
+    CMAKE_PROJECT_VERSION
+    CMAKE_PROJECT_VERSION_MAJOR
+    CMAKE_PROJECT_VERSION_MINOR
+    CMAKE_PROJECT_VERSION_PATCH
+This warning is for project developers.  Use -Wno-dev to suppress it.
+[0m
+[1m[30mcd /home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/build/rotors_joy_interface; catkin build --get-env rotors_joy_interface | catkin env -si  /usr/bin/make cmake_check_build_system; cd -[0m
+[0m
+[33m..................................................................................................................................................................................[0m[0m
+[1m[33m__________________________________________________________________________________________________________________________________________________________________________________[0m[0m
+[1m[33mWarnings[0m  [33m <<[0m [36mspacenav_node[0m:[34mmake[0m [1m[33m/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/logs/spacenav_node/build.make.008.log[0m[0m                                         
+In file included from [01m[K/usr/include/boost/math/special_functions/round.hpp:13[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/time.h:58[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/forwards.h:42[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/node_handle.h:31[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/joystick_drivers/spacenav_node/src/spacenav_node.cpp:37[m[K:
+[01m[K/usr/include/boost/math/tools/config.hpp:23:6:[m[K [01;35m[Kwarning: [m[K#warning "The minimum language standard to use Boost.Math will be C++14 starting in July 2023 (Boost 1.82 release)" [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcpp-Wcpp]8;;[m[K]
+   23 | #    [01;35m[Kwarning[m[K "The minimum language standard to use Boost.Math will be C++14 starting in July 2023 (Boost 1.82 release)"
+      |      [01;35m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/boost/smart_ptr/detail/sp_thread_sleep.hpp:22[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/detail/yield_k.hpp:23[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:14[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/detail/spinlock.hpp:42[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/detail/spinlock_pool.hpp:25[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/shared_ptr.hpp:29[m[K,
+                 from [01m[K/usr/include/boost/shared_ptr.hpp:17[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/forwards.h:37[m[K:
+[01m[K/usr/include/boost/bind.hpp:36:1:[m[K [01;36m[Knote: [m[K‘[01m[K#pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace boost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.[m[K’
+   36 | [01;36m[KBOOST_PRAGMA_MESSAGE[m[K(
+      | [01;36m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[1m[30mcd /home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/build/spacenav_node; catkin build --get-env spacenav_node | catkin env -si  /usr/bin/make --jobserver-auth=6,7; cd -[0m
+[0m
+[33m..................................................................................................................................................................................[0m[0m
+[1m[33m__________________________________________________________________________________________________________________________________________________________________________________[0m[0m
+[1m[33mWarnings[0m  [33m <<[0m [36mjoy[0m:[34mmake[0m [1m[33m/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/logs/joy/build.make.008.log[0m[0m                                                             
+In file included from [01m[K/usr/include/boost/math/special_functions/round.hpp:13[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/time.h:58[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/forwards.h:42[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/node_handle.h:31[m[K,
+                 from [01m[K/opt/ros/noetic/include/diagnostic_updater/diagnostic_updater.h:42[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/joystick_drivers/joy/src/joy_node.cpp:45[m[K:
+[01m[K/usr/include/boost/math/tools/config.hpp:23:6:[m[K [01;35m[Kwarning: [m[K#warning "The minimum language standard to use Boost.Math will be C++14 starting in July 2023 (Boost 1.82 release)" [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcpp-Wcpp]8;;[m[K]
+   23 | #    [01;35m[Kwarning[m[K "The minimum language standard to use Boost.Math will be C++14 starting in July 2023 (Boost 1.82 release)"
+      |      [01;35m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/boost/smart_ptr/detail/sp_thread_sleep.hpp:22[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/detail/yield_k.hpp:23[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:14[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/detail/spinlock.hpp:42[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/detail/spinlock_pool.hpp:25[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/shared_ptr.hpp:29[m[K,
+                 from [01m[K/usr/include/boost/shared_ptr.hpp:17[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/forwards.h:37[m[K:
+[01m[K/usr/include/boost/bind.hpp:36:1:[m[K [01;36m[Knote: [m[K‘[01m[K#pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace boost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.[m[K’
+   36 | [01;36m[KBOOST_PRAGMA_MESSAGE[m[K(
+      | [01;36m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/joystick_drivers/joy/src/joy_node.cpp:84:51:[m[K [01;35m[Kwarning: [m[Kignoring attributes on template argument ‘[01m[Kint (*)(DIR*)[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wignored-attributes-Wignored-attributes]8;;[m[K]
+   84 |   typedef std::unique_ptr<DIR, decltype(&closedir)[01;35m[K>[m[K dir_ptr;
+      |                                                   [01;35m[K^[m[K
+[1m[30mcd /home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/build/joy; catkin build --get-env joy | catkin env -si  /usr/bin/make --jobserver-auth=6,7; cd -[0m
+[0m
+[33m..................................................................................................................................................................................[0m[0m
+[1m[33m__________________________________________________________________________________________________________________________________________________________________________________[0m[0m
+[1m[33mWarnings[0m  [33m <<[0m [36mmav_comm[0m:[34mcheck[0m [1m[33m/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/logs/mav_comm/build.check.005.log[0m[0m                                                 
+[0mCMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 2.8.12 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+[0m
+[33mCMake Warning (dev) at CMakeLists.txt:2 (project):
+  Policy CMP0048 is not set: project() command manages VERSION variables.
+  Run "cmake --help-policy CMP0048" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+
+  The following variable(s) would be set to empty:
+
+    CMAKE_PROJECT_VERSION
+    CMAKE_PROJECT_VERSION_MAJOR
+    CMAKE_PROJECT_VERSION_MINOR
+    CMAKE_PROJECT_VERSION_PATCH
+This warning is for project developers.  Use -Wno-dev to suppress it.
+[0m
+[1m[30mcd /home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/build/mav_comm; catkin build --get-env mav_comm | catkin env -si  /usr/bin/make cmake_check_build_system; cd -[0m
+[0m
+[33m..................................................................................................................................................................................[0m[0m
+[1m[33m__________________________________________________________________________________________________________________________________________________________________________________[0m[0m
+[1m[33mWarnings[0m  [33m <<[0m [36mjoystick_drivers[0m:[34mcheck[0m [1m[33m/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/logs/joystick_drivers/build.check.005.log[0m[0m                                 
+[0mCMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 2.8.12 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+[0m
+[33mCMake Warning (dev) at CMakeLists.txt:2 (project):
+  Policy CMP0048 is not set: project() command manages VERSION variables.
+  Run "cmake --help-policy CMP0048" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+
+  The following variable(s) would be set to empty:
+
+    CMAKE_PROJECT_VERSION
+    CMAKE_PROJECT_VERSION_MAJOR
+    CMAKE_PROJECT_VERSION_MINOR
+    CMAKE_PROJECT_VERSION_PATCH
+This warning is for project developers.  Use -Wno-dev to suppress it.
+[0m
+[1m[30mcd /home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/build/joystick_drivers; catkin build --get-env joystick_drivers | catkin env -si  /usr/bin/make cmake_check_build_system; cd -[0m
+[0m
+[33m..................................................................................................................................................................................[0m[0m
+[1m[33m__________________________________________________________________________________________________________________________________________________________________________________[0m[0m
+[1m[33mWarnings[0m  [33m <<[0m [36mrotors_joy_interface[0m:[34mmake[0m [1m[33m/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/logs/rotors_joy_interface/build.make.008.log[0m[0m                           
+In file included from [01m[K/usr/include/boost/math/special_functions/round.hpp:13[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/time.h:58[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/serialization.h:34[m[K,
+                 from [01m[K/opt/ros/noetic/include/geometry_msgs/PoseStamped.h:14[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/rotors_simulator/rotors_joy_interface/include/rotors_joy_interface/joy.h:25[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/rotors_simulator/rotors_joy_interface/src/joy.cpp:22[m[K:
+[01m[K/usr/include/boost/math/tools/config.hpp:23:6:[m[K [01;35m[Kwarning: [m[K#warning "The minimum language standard to use Boost.Math will be C++14 starting in July 2023 (Boost 1.82 release)" [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcpp-Wcpp]8;;[m[K]
+   23 | #    [01;35m[Kwarning[m[K "The minimum language standard to use Boost.Math will be C++14 starting in July 2023 (Boost 1.82 release)"
+      |      [01;35m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/boost/smart_ptr/detail/sp_thread_sleep.hpp:22[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/detail/yield_k.hpp:23[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:14[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/detail/spinlock.hpp:42[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/detail/spinlock_pool.hpp:25[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/shared_ptr.hpp:29[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/shared_array.hpp:24[m[K,
+                 from [01m[K/usr/include/boost/shared_array.hpp:17[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/serialized_message.h:33[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/serialization.h:36[m[K:
+[01m[K/usr/include/boost/bind.hpp:36:1:[m[K [01;36m[Knote: [m[K‘[01m[K#pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace boost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.[m[K’
+   36 | [01;36m[KBOOST_PRAGMA_MESSAGE[m[K(
+      | [01;36m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[1m[30mcd /home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/build/rotors_joy_interface; catkin build --get-env rotors_joy_interface | catkin env -si  /usr/bin/make --jobserver-auth=6,7; cd -[0m
+[0m
+[33m..................................................................................................................................................................................[0m[0m
+[1m[33m__________________________________________________________________________________________________________________________________________________________________________________[0m[0m
+[1m[33mWarnings[0m  [33m <<[0m [36mwiimote[0m:[34mmake[0m [1m[33m/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/logs/wiimote/build.make.000.log[0m[0m                                                     
+In file included from [01m[K/usr/include/boost/math/special_functions/round.hpp:13[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/time.h:58[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/ros.h:38[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/joystick_drivers/wiimote/include/wiimote/wiimote_controller.h:41[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/joystick_drivers/wiimote/src/wiimote_controller.cpp:45[m[K:
+[01m[K/usr/include/boost/math/tools/config.hpp:23:6:[m[K [01;35m[Kwarning: [m[K#warning "The minimum language standard to use Boost.Math will be C++14 starting in July 2023 (Boost 1.82 release)" [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcpp-Wcpp]8;;[m[K]
+   23 | #    [01;35m[Kwarning[m[K "The minimum language standard to use Boost.Math will be C++14 starting in July 2023 (Boost 1.82 release)"
+      |      [01;35m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/boost/math/special_functions/round.hpp:13[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/time.h:58[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/ros.h:38[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/joystick_drivers/wiimote/include/wiimote/teleop_wiimote.h:27[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/joystick_drivers/wiimote/src/teleop_wiimote.cpp:23[m[K:
+[01m[K/usr/include/boost/math/tools/config.hpp:23:6:[m[K [01;35m[Kwarning: [m[K#warning "The minimum language standard to use Boost.Math will be C++14 starting in July 2023 (Boost 1.82 release)" [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcpp-Wcpp]8;;[m[K]
+   23 | #    [01;35m[Kwarning[m[K "The minimum language standard to use Boost.Math will be C++14 starting in July 2023 (Boost 1.82 release)"
+      |      [01;35m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/boost/math/special_functions/round.hpp:13[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/time.h:58[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/ros.h:38[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/joystick_drivers/wiimote/src/stat_vector_3d.cpp:26[m[K:
+[01m[K/usr/include/boost/math/tools/config.hpp:23:6:[m[K [01;35m[Kwarning: [m[K#warning "The minimum language standard to use Boost.Math will be C++14 starting in July 2023 (Boost 1.82 release)" [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcpp-Wcpp]8;;[m[K]
+   23 | #    [01;35m[Kwarning[m[K "The minimum language standard to use Boost.Math will be C++14 starting in July 2023 (Boost 1.82 release)"
+      |      [01;35m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/boost/smart_ptr/detail/sp_thread_sleep.hpp:22[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/detail/yield_k.hpp:23[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:14[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/detail/spinlock.hpp:42[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/detail/spinlock_pool.hpp:25[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/shared_ptr.hpp:29[m[K,
+                 from [01m[K/usr/include/boost/shared_ptr.hpp:17[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/forwards.h:37[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/common.h:37[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/ros.h:43[m[K:
+[01m[K/usr/include/boost/bind.hpp:36:1:[m[K [01;36m[Knote: [m[K‘[01m[K#pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace boost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.[m[K’
+   36 | [01;36m[KBOOST_PRAGMA_MESSAGE[m[K(
+      | [01;36m[K^~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/usr/include/boost/smart_ptr/detail/sp_thread_sleep.hpp:22[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/detail/yield_k.hpp:23[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:14[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/detail/spinlock.hpp:42[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/detail/spinlock_pool.hpp:25[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/shared_ptr.hpp:29[m[K,
+                 from [01m[K/usr/include/boost/shared_ptr.hpp:17[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/forwards.h:37[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/common.h:37[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/ros.h:43[m[K:
+[01m[K/usr/include/boost/bind.hpp:36:1:[m[K [01;36m[Knote: [m[K‘[01m[K#pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace boost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.[m[K’
+   36 | [01;36m[KBOOST_PRAGMA_MESSAGE[m[K(
+      | [01;36m[K^~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/usr/include/boost/smart_ptr/detail/sp_thread_sleep.hpp:22[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/detail/yield_k.hpp:23[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:14[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/detail/spinlock.hpp:42[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/detail/spinlock_pool.hpp:25[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/shared_ptr.hpp:29[m[K,
+                 from [01m[K/usr/include/boost/shared_ptr.hpp:17[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/forwards.h:37[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/common.h:37[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/ros.h:43[m[K:
+[01m[K/usr/include/boost/bind.hpp:36:1:[m[K [01;36m[Knote: [m[K‘[01m[K#pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace boost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.[m[K’
+   36 | [01;36m[KBOOST_PRAGMA_MESSAGE[m[K(
+      | [01;36m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/joystick_drivers/wiimote/src/stat_vector_3d.cpp:[m[K In member function ‘[01m[KTVectorDouble StatVector3d::getMeanScaled(double)[m[K’:
+[01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/joystick_drivers/wiimote/src/stat_vector_3d.cpp:98:34:[m[K [01;35m[Kwarning: [m[K‘[01m[Kstd::binder1st<_Operation> std::bind1st(const _Operation&, const _Tp&) [with _Operation = multiplies<double>; _Tp = double][m[K’ is deprecated: use 'std::bind' instead [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+   98 |                      [01;35m[Kstd::bind1st(std::multiplies<double>(), scale)[m[K);
+      |                      [01;35m[K~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/12.2.1/bits/stl_function.h:1438[m[K,
+                 from [01m[K/usr/include/c++/12.2.1/bits/refwrap.h:39[m[K,
+                 from [01m[K/usr/include/c++/12.2.1/vector:66[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/joystick_drivers/wiimote/include/wiimote/stat_vector_3d.h:28[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/joystick_drivers/wiimote/src/stat_vector_3d.cpp:24[m[K:
+[01m[K/usr/include/c++/12.2.1/backward/binders.h:136:5:[m[K [01;36m[Knote: [m[Kdeclared here
+  136 |     [01;36m[Kbind1st[m[K(const _Operation& __fn, const _Tp& __x)
+      |     [01;36m[K^~~~~~~[m[K
+[01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/joystick_drivers/wiimote/src/stat_vector_3d.cpp:[m[K In member function ‘[01m[KTVectorDouble StatVector3d::getVarianceScaled(double)[m[K’:
+[01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/joystick_drivers/wiimote/src/stat_vector_3d.cpp:149:34:[m[K [01;35m[Kwarning: [m[K‘[01m[Kstd::binder1st<_Operation> std::bind1st(const _Operation&, const _Tp&) [with _Operation = multiplies<double>; _Tp = double][m[K’ is deprecated: use 'std::bind' instead [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+  149 |                      [01;35m[Kstd::bind1st(std::multiplies<double>(), scale)[m[K);
+      |                      [01;35m[K~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/usr/include/c++/12.2.1/backward/binders.h:136:5:[m[K [01;36m[Knote: [m[Kdeclared here
+  136 |     [01;36m[Kbind1st[m[K(const _Operation& __fn, const _Tp& __x)
+      |     [01;36m[K^~~~~~~[m[K
+[01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/joystick_drivers/wiimote/src/stat_vector_3d.cpp:[m[K In member function ‘[01m[KTVectorDouble StatVector3d::getStandardDeviationScaled(double)[m[K’:
+[01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/joystick_drivers/wiimote/src/stat_vector_3d.cpp:172:34:[m[K [01;35m[Kwarning: [m[K‘[01m[Kstd::binder1st<_Operation> std::bind1st(const _Operation&, const _Tp&) [with _Operation = multiplies<double>; _Tp = double][m[K’ is deprecated: use 'std::bind' instead [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+  172 |                      [01;35m[Kstd::bind1st(std::multiplies<double>(), scale)[m[K);
+      |                      [01;35m[K~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/usr/include/c++/12.2.1/backward/binders.h:136:5:[m[K [01;36m[Knote: [m[Kdeclared here
+  136 |     [01;36m[Kbind1st[m[K(const _Operation& __fn, const _Tp& __x)
+      |     [01;36m[K^~~~~~~[m[K
+[1m[30mcd /home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/build/wiimote; catkin build --get-env wiimote | catkin env -si  /usr/bin/make --jobserver-auth=6,7; cd -[0m
+[0m
+[33m..................................................................................................................................................................................[0m[0m
+[1m[33m__________________________________________________________________________________________________________________________________________________________________________________[0m[0m
+[1m[33mWarnings[0m  [33m <<[0m [36mrotors_control[0m:[34mmake[0m [1m[33m/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/logs/rotors_control/build.make.008.log[0m[0m                                       
+In file included from [01m[K/usr/include/boost/math/special_functions/round.hpp:13[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/time.h:58[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/serialization.h:34[m[K,
+                 from [01m[K/opt/ros/noetic/include/geometry_msgs/Point.h:14[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/mav_comm/mav_msgs/include/mav_msgs/conversions.h:26[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/rotors_simulator/rotors_control/include/rotors_control/lee_position_controller.h:24[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/rotors_simulator/rotors_control/src/library/lee_position_controller.cpp:21[m[K:
+[01m[K/usr/include/boost/math/tools/config.hpp:23:6:[m[K [01;35m[Kwarning: [m[K#warning "The minimum language standard to use Boost.Math will be C++14 starting in July 2023 (Boost 1.82 release)" [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcpp-Wcpp]8;;[m[K]
+   23 | #    [01;35m[Kwarning[m[K "The minimum language standard to use Boost.Math will be C++14 starting in July 2023 (Boost 1.82 release)"
+      |      [01;35m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/boost/math/special_functions/round.hpp:13[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/time.h:58[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/serialization.h:34[m[K,
+                 from [01m[K/opt/ros/noetic/include/geometry_msgs/Point.h:14[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/mav_comm/mav_msgs/include/mav_msgs/conversions.h:26[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/rotors_simulator/rotors_control/include/rotors_control/roll_pitch_yawrate_thrust_controller.h:24[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/rotors_simulator/rotors_control/src/library/roll_pitch_yawrate_thrust_controller.cpp:21[m[K:
+[01m[K/usr/include/boost/math/tools/config.hpp:23:6:[m[K [01;35m[Kwarning: [m[K#warning "The minimum language standard to use Boost.Math will be C++14 starting in July 2023 (Boost 1.82 release)" [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcpp-Wcpp]8;;[m[K]
+   23 | #    [01;35m[Kwarning[m[K "The minimum language standard to use Boost.Math will be C++14 starting in July 2023 (Boost 1.82 release)"
+      |      [01;35m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/boost/smart_ptr/detail/sp_thread_sleep.hpp:22[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/detail/yield_k.hpp:23[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:14[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/detail/spinlock.hpp:42[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/detail/spinlock_pool.hpp:25[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/shared_ptr.hpp:29[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/shared_array.hpp:24[m[K,
+                 from [01m[K/usr/include/boost/shared_array.hpp:17[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/serialized_message.h:33[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/serialization.h:36[m[K:
+[01m[K/usr/include/boost/bind.hpp:36:1:[m[K [01;36m[Knote: [m[K‘[01m[K#pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace boost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.[m[K’
+   36 | [01;36m[KBOOST_PRAGMA_MESSAGE[m[K(
+      | [01;36m[K^~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/usr/include/boost/smart_ptr/detail/sp_thread_sleep.hpp:22[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/detail/yield_k.hpp:23[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:14[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/detail/spinlock.hpp:42[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/detail/spinlock_pool.hpp:25[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/shared_ptr.hpp:29[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/shared_array.hpp:24[m[K,
+                 from [01m[K/usr/include/boost/shared_array.hpp:17[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/serialized_message.h:33[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/serialization.h:36[m[K:
+[01m[K/usr/include/boost/bind.hpp:36:1:[m[K [01;36m[Knote: [m[K‘[01m[K#pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace boost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.[m[K’
+   36 | [01;36m[KBOOST_PRAGMA_MESSAGE[m[K(
+      | [01;36m[K^~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/usr/include/boost/math/special_functions/round.hpp:13[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/time.h:58[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/serialization.h:34[m[K,
+                 from [01m[K/opt/ros/noetic/include/geometry_msgs/PoseStamped.h:14[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/rotors_simulator/rotors_control/src/nodes/roll_pitch_yawrate_thrust_controller_node.h:28[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/rotors_simulator/rotors_control/src/nodes/roll_pitch_yawrate_thrust_controller_node.cpp:21[m[K:
+[01m[K/usr/include/boost/math/tools/config.hpp:23:6:[m[K [01;35m[Kwarning: [m[K#warning "The minimum language standard to use Boost.Math will be C++14 starting in July 2023 (Boost 1.82 release)" [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcpp-Wcpp]8;;[m[K]
+   23 | #    [01;35m[Kwarning[m[K "The minimum language standard to use Boost.Math will be C++14 starting in July 2023 (Boost 1.82 release)"
+      |      [01;35m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/boost/bind.hpp:30[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/rotors_simulator/rotors_control/src/nodes/roll_pitch_yawrate_thrust_controller_node.h:24[m[K:
+[01m[K/usr/include/boost/bind.hpp:36:1:[m[K [01;36m[Knote: [m[K‘[01m[K#pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace boost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.[m[K’
+   36 | [01;36m[KBOOST_PRAGMA_MESSAGE[m[K(
+      | [01;36m[K^~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/usr/include/boost/math/special_functions/round.hpp:13[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/time.h:58[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/ros.h:38[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/rotors_simulator/rotors_control/src/nodes/lee_position_controller_node.cpp:21[m[K:
+[01m[K/usr/include/boost/math/tools/config.hpp:23:6:[m[K [01;35m[Kwarning: [m[K#warning "The minimum language standard to use Boost.Math will be C++14 starting in July 2023 (Boost 1.82 release)" [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcpp-Wcpp]8;;[m[K]
+   23 | #    [01;35m[Kwarning[m[K "The minimum language standard to use Boost.Math will be C++14 starting in July 2023 (Boost 1.82 release)"
+      |      [01;35m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/boost/smart_ptr/detail/sp_thread_sleep.hpp:22[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/detail/yield_k.hpp:23[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:14[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/detail/spinlock.hpp:42[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/detail/spinlock_pool.hpp:25[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/shared_ptr.hpp:29[m[K,
+                 from [01m[K/usr/include/boost/shared_ptr.hpp:17[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/forwards.h:37[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/common.h:37[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/ros.h:43[m[K:
+[01m[K/usr/include/boost/bind.hpp:36:1:[m[K [01;36m[Knote: [m[K‘[01m[K#pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace boost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.[m[K’
+   36 | [01;36m[KBOOST_PRAGMA_MESSAGE[m[K(
+      | [01;36m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[1m[30mcd /home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/build/rotors_control; catkin build --get-env rotors_control | catkin env -si  /usr/bin/make --jobserver-auth=6,7; cd -[0m
+[0m
+[33m..................................................................................................................................................................................[0m[0m
+[1m[33m__________________________________________________________________________________________________________________________________________________________________________________[0m[0m
+[1m[33mWarnings[0m  [33m <<[0m [36mrotors_gazebo_plugins[0m:[34mcheck[0m [1m[33m/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/logs/rotors_gazebo_plugins/build.check.004.log[0m[0m                       
+[0mCMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 2.8.12 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+[0m
+[33mCMake Warning (dev) at CMakeLists.txt:2 (project):
+  Policy CMP0048 is not set: project() command manages VERSION variables.
+  Run "cmake --help-policy CMP0048" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+
+  The following variable(s) would be set to empty:
+
+    CMAKE_PROJECT_VERSION
+    CMAKE_PROJECT_VERSION_MAJOR
+    CMAKE_PROJECT_VERSION_MINOR
+    CMAKE_PROJECT_VERSION_PATCH
+This warning is for project developers.  Use -Wno-dev to suppress it.
+[0m
+[33mCMake Warning (dev) at /usr/share/cmake/Modules/FindPackageHandleStandardArgs.cmake:438 (message):
+  The package name passed to `find_package_handle_standard_args` (PkgConfig)
+  does not match the name of the calling package (gazebo).  This can lead to
+  problems in calling code that expects `find_package` result variables
+  (e.g., `_FOUND`) to follow a certain pattern.
+[36mCall Stack (most recent call first):[0m
+  /usr/share/cmake/Modules/FindPkgConfig.cmake:99 (find_package_handle_standard_args)
+  /usr/lib/cmake/gazebo/gazebo-config.cmake:72 (include)
+  /opt/ros/noetic/share/gazebo_dev/cmake/gazebo_dev-extras.cmake:2 (find_package)
+  /opt/ros/noetic/share/gazebo_dev/cmake/gazebo_devConfig.cmake:222 (include)
+  CMakeLists.txt:111 (find_package)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+[0m
+[33mCMake Warning at /opt/ros/noetic/share/catkin/cmake/catkin_package.cmake:166 (message):
+  catkin_package() DEPENDS on 'opencv' but neither 'opencv_INCLUDE_DIRS' nor
+  'opencv_LIBRARIES' is defined.
+[36mCall Stack (most recent call first):[0m
+  /opt/ros/noetic/share/catkin/cmake/catkin_package.cmake:102 (_catkin_package)
+  CMakeLists.txt:223 (catkin_package)
+
+[0m
+[1m[30mcd /home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/build/rotors_gazebo_plugins; catkin build --get-env rotors_gazebo_plugins | catkin env -si  /usr/bin/make cmake_check_build_system; cd -[0m
+[0m
+[33m..................................................................................................................................................................................[0m[0m
+[1m[33m__________________________________________________________________________________________________________________________________________________________________________________[0m[0m
+[1m[33mWarnings[0m  [33m <<[0m [36mrotors_gazebo_plugins[0m:[34mmake[0m [1m[33m/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/logs/rotors_gazebo_plugins/build.make.005.log[0m[0m                         
+In file included from [01m[K/usr/include/boost/bind.hpp:30[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/rotors_simulator/rotors_gazebo_plugins/include/rotors_gazebo_plugins/gazebo_controller_interface.h:26[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/rotors_simulator/rotors_gazebo_plugins/src/gazebo_controller_interface.cpp:22[m[K:
+[01m[K/usr/include/boost/bind.hpp:36:1:[m[K [01;36m[Knote: [m[K‘[01m[K#pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace boost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.[m[K’
+   36 | [01;36m[KBOOST_PRAGMA_MESSAGE[m[K(
+      | [01;36m[K^~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/usr/include/boost/bind.hpp:30[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/rotors_simulator/rotors_gazebo_plugins/include/rotors_gazebo_plugins/gazebo_motor_model.h:29[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/rotors_simulator/rotors_gazebo_plugins/src/gazebo_motor_model.cpp:22[m[K:
+[01m[K/usr/include/boost/bind.hpp:36:1:[m[K [01;36m[Knote: [m[K‘[01m[K#pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace boost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.[m[K’
+   36 | [01;36m[KBOOST_PRAGMA_MESSAGE[m[K(
+      | [01;36m[K^~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/usr/include/boost/bind.hpp:30[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/rotors_simulator/rotors_gazebo_plugins/include/rotors_gazebo_plugins/gazebo_odometry_plugin.h:32[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/rotors_simulator/rotors_gazebo_plugins/src/gazebo_odometry_plugin.cpp:23[m[K:
+[01m[K/usr/include/boost/bind.hpp:36:1:[m[K [01;36m[Knote: [m[K‘[01m[K#pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace boost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.[m[K’
+   36 | [01;36m[KBOOST_PRAGMA_MESSAGE[m[K(
+      | [01;36m[K^~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/usr/include/gazebo-11/gazebo/common/common.hh:16[m[K,
+                 from [01m[K/usr/include/gazebo-11/gazebo/gazebo_core.hh:19[m[K,
+                 from [01m[K/usr/include/gazebo-11/gazebo/gazebo.hh:20[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/rotors_simulator/rotors_gazebo_plugins/include/rotors_gazebo_plugins/gazebo_gps_plugin.h:25[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/rotors_simulator/rotors_gazebo_plugins/src/gazebo_gps_plugin.cpp:19[m[K:
+[01m[K/usr/include/gazebo-11/gazebo/common/EnumIface.hh:180:12:[m[K [01;35m[Kwarning: [m[K‘[01m[Ktemplate<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator[m[K’ is deprecated [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+  180 |     : std::[01;35m[Kiterator[m[K<std::bidirectional_iterator_tag, Enum>
+      |            [01;35m[K^~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/12.2.1/bits/stl_algobase.h:65[m[K,
+                 from [01m[K/usr/include/c++/12.2.1/bits/specfun.h:45[m[K,
+                 from [01m[K/usr/include/c++/12.2.1/cmath:1935[m[K,
+                 from [01m[K/usr/include/c++/12.2.1/random:38[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/rotors_simulator/rotors_gazebo_plugins/include/rotors_gazebo_plugins/gazebo_gps_plugin.h:22[m[K:
+[01m[K/usr/include/c++/12.2.1/bits/stl_iterator_base_types.h:127:34:[m[K [01;36m[Knote: [m[Kdeclared here
+  127 |     struct _GLIBCXX17_DEPRECATED [01;36m[Kiterator[m[K
+      |                                  [01;36m[K^~~~~~~~[m[K
+In file included from [01m[K/usr/include/gazebo-11/gazebo/common/common.hh:16[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/rotors_simulator/rotors_gazebo_plugins/include/rotors_gazebo_plugins/gazebo_odometry_plugin.h:33[m[K:
+[01m[K/usr/include/gazebo-11/gazebo/common/EnumIface.hh:180:12:[m[K [01;35m[Kwarning: [m[K‘[01m[Ktemplate<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator[m[K’ is deprecated [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+  180 |     : std::[01;35m[Kiterator[m[K<std::bidirectional_iterator_tag, Enum>
+      |            [01;35m[K^~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/12.2.1/bits/stl_algobase.h:65[m[K,
+                 from [01m[K/usr/include/c++/12.2.1/bits/specfun.h:45[m[K,
+                 from [01m[K/usr/include/c++/12.2.1/cmath:1935[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/rotors_simulator/rotors_gazebo_plugins/include/rotors_gazebo_plugins/gazebo_odometry_plugin.h:26[m[K:
+[01m[K/usr/include/c++/12.2.1/bits/stl_iterator_base_types.h:127:34:[m[K [01;36m[Knote: [m[Kdeclared here
+  127 |     struct _GLIBCXX17_DEPRECATED [01;36m[Kiterator[m[K
+      |                                  [01;36m[K^~~~~~~~[m[K
+In file included from [01m[K/usr/include/gazebo-11/gazebo/common/common.hh:16[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/rotors_simulator/rotors_gazebo_plugins/include/rotors_gazebo_plugins/gazebo_motor_model.h:31[m[K:
+[01m[K/usr/include/gazebo-11/gazebo/common/EnumIface.hh:180:12:[m[K [01;35m[Kwarning: [m[K‘[01m[Ktemplate<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator[m[K’ is deprecated [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+  180 |     : std::[01;35m[Kiterator[m[K<std::bidirectional_iterator_tag, Enum>
+      |            [01;35m[K^~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/12.2.1/bits/stl_construct.h:61[m[K,
+                 from [01m[K/usr/include/c++/12.2.1/memory:64[m[K,
+                 from [01m[K/usr/include/boost/config/no_tr1/memory.hpp:21[m[K,
+                 from [01m[K/usr/include/boost/get_pointer.hpp:14[m[K,
+                 from [01m[K/usr/include/boost/bind/mem_fn.hpp:25[m[K,
+                 from [01m[K/usr/include/boost/bind/bind.hpp:26[m[K,
+                 from [01m[K/usr/include/boost/bind.hpp:29[m[K:
+[01m[K/usr/include/c++/12.2.1/bits/stl_iterator_base_types.h:127:34:[m[K [01;36m[Knote: [m[Kdeclared here
+  127 |     struct _GLIBCXX17_DEPRECATED [01;36m[Kiterator[m[K
+      |                                  [01;36m[K^~~~~~~~[m[K
+In file included from [01m[K/usr/include/gazebo-11/gazebo/sensors/SensorTypes.hh:23[m[K,
+                 from [01m[K/usr/include/gazebo-11/gazebo/common/Plugin.hh:42[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/rotors_simulator/rotors_gazebo_plugins/include/rotors_gazebo_plugins/gazebo_controller_interface.h:30[m[K:
+[01m[K/usr/include/gazebo-11/gazebo/common/EnumIface.hh:180:12:[m[K [01;35m[Kwarning: [m[K‘[01m[Ktemplate<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator[m[K’ is deprecated [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+  180 |     : std::[01;35m[Kiterator[m[K<std::bidirectional_iterator_tag, Enum>
+      |            [01;35m[K^~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/12.2.1/bits/stl_construct.h:61[m[K,
+                 from [01m[K/usr/include/c++/12.2.1/memory:64[m[K,
+                 from [01m[K/usr/include/boost/config/no_tr1/memory.hpp:21[m[K,
+                 from [01m[K/usr/include/boost/get_pointer.hpp:14[m[K,
+                 from [01m[K/usr/include/boost/bind/mem_fn.hpp:25[m[K,
+                 from [01m[K/usr/include/boost/bind/bind.hpp:26[m[K,
+                 from [01m[K/usr/include/boost/bind.hpp:29[m[K:
+[01m[K/usr/include/c++/12.2.1/bits/stl_iterator_base_types.h:127:34:[m[K [01;36m[Knote: [m[Kdeclared here
+  127 |     struct _GLIBCXX17_DEPRECATED [01;36m[Kiterator[m[K
+      |                                  [01;36m[K^~~~~~~~[m[K
+In file included from [01m[K/usr/include/gazebo-11/gazebo/common/common.hh:16[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/rotors_simulator/rotors_gazebo_plugins/include/rotors_gazebo_plugins/gazebo_magnetometer_plugin.h:22[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/rotors_simulator/rotors_gazebo_plugins/src/gazebo_magnetometer_plugin.cpp:18[m[K:
+[01m[K/usr/include/gazebo-11/gazebo/common/EnumIface.hh:180:12:[m[K [01;35m[Kwarning: [m[K‘[01m[Ktemplate<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator[m[K’ is deprecated [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+  180 |     : std::[01;35m[Kiterator[m[K<std::bidirectional_iterator_tag, Enum>
+      |            [01;35m[K^~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/12.2.1/bits/stl_algobase.h:65[m[K,
+                 from [01m[K/usr/include/c++/12.2.1/bits/specfun.h:45[m[K,
+                 from [01m[K/usr/include/c++/12.2.1/cmath:1935[m[K,
+                 from [01m[K/usr/include/c++/12.2.1/random:38[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/rotors_simulator/rotors_gazebo_plugins/include/rotors_gazebo_plugins/gazebo_magnetometer_plugin.h:20[m[K:
+[01m[K/usr/include/c++/12.2.1/bits/stl_iterator_base_types.h:127:34:[m[K [01;36m[Knote: [m[Kdeclared here
+  127 |     struct _GLIBCXX17_DEPRECATED [01;36m[Kiterator[m[K
+      |                                  [01;36m[K^~~~~~~~[m[K
+In file included from [01m[K/usr/include/gazebo-11/gazebo/common/common.hh:16[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/rotors_simulator/rotors_gazebo_plugins/include/rotors_gazebo_plugins/gazebo_wind_plugin.h:28[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/rotors_simulator/rotors_gazebo_plugins/src/gazebo_wind_plugin.cpp:22[m[K:
+[01m[K/usr/include/gazebo-11/gazebo/common/EnumIface.hh:180:12:[m[K [01;35m[Kwarning: [m[K‘[01m[Ktemplate<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator[m[K’ is deprecated [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+  180 |     : std::[01;35m[Kiterator[m[K<std::bidirectional_iterator_tag, Enum>
+      |            [01;35m[K^~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/12.2.1/string:45[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/rotors_simulator/rotors_gazebo_plugins/include/rotors_gazebo_plugins/gazebo_wind_plugin.h:26[m[K:
+[01m[K/usr/include/c++/12.2.1/bits/stl_iterator_base_types.h:127:34:[m[K [01;36m[Knote: [m[Kdeclared here
+  127 |     struct _GLIBCXX17_DEPRECATED [01;36m[Kiterator[m[K
+      |                                  [01;36m[K^~~~~~~~[m[K
+In file included from [01m[K/usr/include/gazebo-11/gazebo/sensors/SensorTypes.hh:23[m[K,
+                 from [01m[K/usr/include/gazebo-11/gazebo/common/Plugin.hh:42[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/rotors_simulator/rotors_gazebo_plugins/include/rotors_gazebo_plugins/gazebo_fw_dynamics_plugin.h:20[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/rotors_simulator/rotors_gazebo_plugins/src/gazebo_fw_dynamics_plugin.cpp:18[m[K:
+[01m[K/usr/include/gazebo-11/gazebo/common/EnumIface.hh:180:12:[m[K [01;35m[Kwarning: [m[K‘[01m[Ktemplate<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator[m[K’ is deprecated [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+  180 |     : std::[01;35m[Kiterator[m[K<std::bidirectional_iterator_tag, Enum>
+      |            [01;35m[K^~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/12.2.1/bits/stl_algobase.h:65[m[K,
+                 from [01m[K/usr/include/c++/12.2.1/list:60[m[K,
+                 from [01m[K/usr/include/gazebo-11/gazebo/common/Plugin.hh:30[m[K:
+[01m[K/usr/include/c++/12.2.1/bits/stl_iterator_base_types.h:127:34:[m[K [01;36m[Knote: [m[Kdeclared here
+  127 |     struct _GLIBCXX17_DEPRECATED [01;36m[Kiterator[m[K
+      |                                  [01;36m[K^~~~~~~~[m[K
+In file included from [01m[K/usr/include/gazebo-11/gazebo/common/common.hh:16[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/rotors_simulator/rotors_gazebo_plugins/include/rotors_gazebo_plugins/gazebo_imu_plugin.h:28[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/rotors_simulator/rotors_gazebo_plugins/src/gazebo_imu_plugin.cpp:23[m[K:
+[01m[K/usr/include/gazebo-11/gazebo/common/EnumIface.hh:180:12:[m[K [01;35m[Kwarning: [m[K‘[01m[Ktemplate<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator[m[K’ is deprecated [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+  180 |     : std::[01;35m[Kiterator[m[K<std::bidirectional_iterator_tag, Enum>
+      |            [01;35m[K^~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/12.2.1/bits/stl_algobase.h:65[m[K,
+                 from [01m[K/usr/include/c++/12.2.1/bits/specfun.h:45[m[K,
+                 from [01m[K/usr/include/c++/12.2.1/cmath:1935[m[K,
+                 from [01m[K/usr/include/c++/12.2.1/random:38[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/rotors_simulator/rotors_gazebo_plugins/include/rotors_gazebo_plugins/gazebo_imu_plugin.h:25[m[K:
+[01m[K/usr/include/c++/12.2.1/bits/stl_iterator_base_types.h:127:34:[m[K [01;36m[Knote: [m[Kdeclared here
+  127 |     struct _GLIBCXX17_DEPRECATED [01;36m[Kiterator[m[K
+      |                                  [01;36m[K^~~~~~~~[m[K
+In file included from [01m[K/usr/include/gazebo-11/gazebo/common/common.hh:16[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/rotors_simulator/rotors_gazebo_plugins/include/rotors_gazebo_plugins/gazebo_bag_plugin.h:28[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/rotors_simulator/rotors_gazebo_plugins/src/gazebo_bag_plugin.cpp:22[m[K:
+[01m[K/usr/include/gazebo-11/gazebo/common/EnumIface.hh:180:12:[m[K [01;35m[Kwarning: [m[K‘[01m[Ktemplate<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator[m[K’ is deprecated [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+  180 |     : std::[01;35m[Kiterator[m[K<std::bidirectional_iterator_tag, Enum>
+      |            [01;35m[K^~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/12.2.1/string:45[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/rotors_simulator/rotors_gazebo_plugins/include/rotors_gazebo_plugins/gazebo_bag_plugin.h:26[m[K:
+[01m[K/usr/include/c++/12.2.1/bits/stl_iterator_base_types.h:127:34:[m[K [01;36m[Knote: [m[Kdeclared here
+  127 |     struct _GLIBCXX17_DEPRECATED [01;36m[Kiterator[m[K
+      |                                  [01;36m[K^~~~~~~~[m[K
+In file included from [01m[K/usr/include/gazebo-11/gazebo/common/common.hh:16[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/rotors_simulator/rotors_gazebo_plugins/include/rotors_gazebo_plugins/gazebo_multirotor_base_plugin.h:28[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/rotors_simulator/rotors_gazebo_plugins/src/gazebo_multirotor_base_plugin.cpp:23[m[K:
+[01m[K/usr/include/gazebo-11/gazebo/common/EnumIface.hh:180:12:[m[K [01;35m[Kwarning: [m[K‘[01m[Ktemplate<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator[m[K’ is deprecated [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+  180 |     : std::[01;35m[Kiterator[m[K<std::bidirectional_iterator_tag, Enum>
+      |            [01;35m[K^~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/12.2.1/string:45[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/rotors_simulator/rotors_gazebo_plugins/include/rotors_gazebo_plugins/gazebo_multirotor_base_plugin.h:26[m[K:
+[01m[K/usr/include/c++/12.2.1/bits/stl_iterator_base_types.h:127:34:[m[K [01;36m[Knote: [m[Kdeclared here
+  127 |     struct _GLIBCXX17_DEPRECATED [01;36m[Kiterator[m[K
+      |                                  [01;36m[K^~~~~~~~[m[K
+In file included from [01m[K/usr/include/gazebo-11/gazebo/sensors/SensorTypes.hh:23[m[K,
+                 from [01m[K/usr/include/gazebo-11/gazebo/common/Plugin.hh:42[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/rotors_simulator/rotors_gazebo_plugins/include/rotors_gazebo_plugins/gazebo_ros_interface_plugin.h:24[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/rotors_simulator/rotors_gazebo_plugins/src/gazebo_ros_interface_plugin.cpp:18[m[K:
+[01m[K/usr/include/gazebo-11/gazebo/common/EnumIface.hh:180:12:[m[K [01;35m[Kwarning: [m[K‘[01m[Ktemplate<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator[m[K’ is deprecated [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+  180 |     : std::[01;35m[Kiterator[m[K<std::bidirectional_iterator_tag, Enum>
+      |            [01;35m[K^~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/12.2.1/bits/stl_algobase.h:65[m[K,
+                 from [01m[K/usr/include/c++/12.2.1/bits/specfun.h:45[m[K,
+                 from [01m[K/usr/include/c++/12.2.1/cmath:1935[m[K,
+                 from [01m[K/usr/include/c++/12.2.1/random:38[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/rotors_simulator/rotors_gazebo_plugins/include/rotors_gazebo_plugins/gazebo_ros_interface_plugin.h:21[m[K:
+[01m[K/usr/include/c++/12.2.1/bits/stl_iterator_base_types.h:127:34:[m[K [01;36m[Knote: [m[Kdeclared here
+  127 |     struct _GLIBCXX17_DEPRECATED [01;36m[Kiterator[m[K
+      |                                  [01;36m[K^~~~~~~~[m[K
+[1m[30mcd /home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/build/rotors_gazebo_plugins; catkin build --get-env rotors_gazebo_plugins | catkin env -si  /usr/bin/make --jobserver-auth=6,7; cd -[0m
+[0m
+[33m..................................................................................................................................................................................[0m[0m
+[1m[33m__________________________________________________________________________________________________________________________________________________________________________________[0m[0m
+[1m[33mWarnings[0m  [33m <<[0m [36mrotors_gazebo[0m:[34mcheck[0m [1m[33m/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/logs/rotors_gazebo/build.check.003.log[0m[0m                                       
+[0mCMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 2.8.12 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+[0m
+[33mCMake Warning (dev) at CMakeLists.txt:2 (project):
+  Policy CMP0048 is not set: project() command manages VERSION variables.
+  Run "cmake --help-policy CMP0048" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+
+  The following variable(s) would be set to empty:
+
+    CMAKE_PROJECT_VERSION
+    CMAKE_PROJECT_VERSION_MAJOR
+    CMAKE_PROJECT_VERSION_MINOR
+    CMAKE_PROJECT_VERSION_PATCH
+This warning is for project developers.  Use -Wno-dev to suppress it.
+[0m
+[1m[30mcd /home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/build/rotors_gazebo; catkin build --get-env rotors_gazebo | catkin env -si  /usr/bin/make cmake_check_build_system; cd -[0m
+[0m
+[33m..................................................................................................................................................................................[0m[0m
+[1m[33m__________________________________________________________________________________________________________________________________________________________________________________[0m[0m
+[1m[33mWarnings[0m  [33m <<[0m [36mrotors_gazebo[0m:[34mmake[0m [1m[33m/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/logs/rotors_gazebo/build.make.004.log[0m[0m                                         
+In file included from [01m[K/usr/include/boost/math/special_functions/round.hpp:13[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/time.h:58[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/serialization.h:34[m[K,
+                 from [01m[K/opt/ros/noetic/include/geometry_msgs/Point.h:14[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/mav_comm/mav_msgs/include/mav_msgs/conversions.h:26[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/rotors_simulator/rotors_gazebo/src/fake_driver.cpp:5[m[K:
+[01m[K/usr/include/boost/math/tools/config.hpp:23:6:[m[K [01;35m[Kwarning: [m[K#warning "The minimum language standard to use Boost.Math will be C++14 starting in July 2023 (Boost 1.82 release)" [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcpp-Wcpp]8;;[m[K]
+   23 | #    [01;35m[Kwarning[m[K "The minimum language standard to use Boost.Math will be C++14 starting in July 2023 (Boost 1.82 release)"
+      |      [01;35m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/boost/math/special_functions/round.hpp:13[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/time.h:58[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/serialization.h:34[m[K,
+                 from [01m[K/opt/ros/noetic/include/geometry_msgs/Point.h:14[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/mav_comm/mav_msgs/include/mav_msgs/conversions.h:26[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/rotors_simulator/rotors_gazebo/src/hovering_example.cpp:25[m[K:
+[01m[K/usr/include/boost/math/tools/config.hpp:23:6:[m[K [01;35m[Kwarning: [m[K#warning "The minimum language standard to use Boost.Math will be C++14 starting in July 2023 (Boost 1.82 release)" [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcpp-Wcpp]8;;[m[K]
+   23 | #    [01;35m[Kwarning[m[K "The minimum language standard to use Boost.Math will be C++14 starting in July 2023 (Boost 1.82 release)"
+      |      [01;35m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/boost/math/special_functions/round.hpp:13[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/time.h:58[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/serialization.h:34[m[K,
+                 from [01m[K/opt/ros/noetic/include/geometry_msgs/Point.h:14[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/mav_comm/mav_msgs/include/mav_msgs/conversions.h:26[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/rotors_simulator/rotors_gazebo/src/waypoint_publisher_file.cpp:25[m[K:
+[01m[K/usr/include/boost/math/tools/config.hpp:23:6:[m[K [01;35m[Kwarning: [m[K#warning "The minimum language standard to use Boost.Math will be C++14 starting in July 2023 (Boost 1.82 release)" [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcpp-Wcpp]8;;[m[K]
+   23 | #    [01;35m[Kwarning[m[K "The minimum language standard to use Boost.Math will be C++14 starting in July 2023 (Boost 1.82 release)"
+      |      [01;35m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/boost/math/special_functions/round.hpp:13[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/time.h:58[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/serialization.h:34[m[K,
+                 from [01m[K/opt/ros/noetic/include/geometry_msgs/Point.h:14[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/mav_comm/mav_msgs/include/mav_msgs/conversions.h:26[m[K,
+                 from [01m[K/home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/src/rotors_simulator/rotors_gazebo/src/waypoint_publisher.cpp:25[m[K:
+[01m[K/usr/include/boost/math/tools/config.hpp:23:6:[m[K [01;35m[Kwarning: [m[K#warning "The minimum language standard to use Boost.Math will be C++14 starting in July 2023 (Boost 1.82 release)" [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcpp-Wcpp]8;;[m[K]
+   23 | #    [01;35m[Kwarning[m[K "The minimum language standard to use Boost.Math will be C++14 starting in July 2023 (Boost 1.82 release)"
+      |      [01;35m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/boost/smart_ptr/detail/sp_thread_sleep.hpp:22[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/detail/yield_k.hpp:23[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:14[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/detail/spinlock.hpp:42[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/detail/spinlock_pool.hpp:25[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/shared_ptr.hpp:29[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/shared_array.hpp:24[m[K,
+                 from [01m[K/usr/include/boost/shared_array.hpp:17[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/serialized_message.h:33[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/serialization.h:36[m[K:
+[01m[K/usr/include/boost/bind.hpp:36:1:[m[K [01;36m[Knote: [m[K‘[01m[K#pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace boost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.[m[K’
+   36 | [01;36m[KBOOST_PRAGMA_MESSAGE[m[K(
+      | [01;36m[K^~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/usr/include/boost/smart_ptr/detail/sp_thread_sleep.hpp:22[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/detail/yield_k.hpp:23[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:14[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/detail/spinlock.hpp:42[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/detail/spinlock_pool.hpp:25[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/shared_ptr.hpp:29[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/shared_array.hpp:24[m[K,
+                 from [01m[K/usr/include/boost/shared_array.hpp:17[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/serialized_message.h:33[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/serialization.h:36[m[K:
+[01m[K/usr/include/boost/bind.hpp:36:1:[m[K [01;36m[Knote: [m[K‘[01m[K#pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace boost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.[m[K’
+   36 | [01;36m[KBOOST_PRAGMA_MESSAGE[m[K(
+      | [01;36m[K^~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/usr/include/boost/smart_ptr/detail/sp_thread_sleep.hpp:22[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/detail/yield_k.hpp:23[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:14[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/detail/spinlock.hpp:42[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/detail/spinlock_pool.hpp:25[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/shared_ptr.hpp:29[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/shared_array.hpp:24[m[K,
+                 from [01m[K/usr/include/boost/shared_array.hpp:17[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/serialized_message.h:33[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/serialization.h:36[m[K:
+[01m[K/usr/include/boost/bind.hpp:36:1:[m[K [01;36m[Knote: [m[K‘[01m[K#pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace boost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.[m[K’
+   36 | [01;36m[KBOOST_PRAGMA_MESSAGE[m[K(
+      | [01;36m[K^~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/usr/include/boost/smart_ptr/detail/sp_thread_sleep.hpp:22[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/detail/yield_k.hpp:23[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:14[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/detail/spinlock.hpp:42[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/detail/spinlock_pool.hpp:25[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/shared_ptr.hpp:29[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/shared_array.hpp:24[m[K,
+                 from [01m[K/usr/include/boost/shared_array.hpp:17[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/serialized_message.h:33[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/serialization.h:36[m[K:
+[01m[K/usr/include/boost/bind.hpp:36:1:[m[K [01;36m[Knote: [m[K‘[01m[K#pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace boost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.[m[K’
+   36 | [01;36m[KBOOST_PRAGMA_MESSAGE[m[K(
+      | [01;36m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[1m[30mcd /home/keelah/Documents/Dev/S8-FrameworkRobotique/TP_Bebop/bebop_ws/build/rotors_gazebo; catkin build --get-env rotors_gazebo | catkin env -si  /usr/bin/make --jobserver-auth=6,7; cd -[0m
+[0m
+[33m..................................................................................................................................................................................[0m[0m
