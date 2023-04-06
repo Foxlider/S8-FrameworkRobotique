@@ -51,7 +51,7 @@ En connaissant les topics correspondant à la commande du drone, on peut affiche
 En utilisant les commandes `rosrun image_view image_view image := image_raw` et `rqt_image_view`, on peut visualiser en
  temps réel la caméra du drone et afficher la tête de Mathis.
 
- ![](../doc/Mathis.png) (trouvable sur discord)
+![Un bon ami](../doc/Mathis.png) 
 
 Nous voulons afficher une courbe représentant l’altitude du drone en temps réel.
 > Cette altitude est disponible sur un topic. Quel serait alors le type de « plugin » rqt à
@@ -59,6 +59,9 @@ utiliser ?
 
 On peut utiliser **rqt_plot** pour analyser l'évolution de l'altitude en tems réel.
 
+
+![Graphique enregistré par Bapiste avec notre drone](../doc/graph.png)
+ 
 # Partie Mini-Projet
 
 ## Question 5 :
