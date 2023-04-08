@@ -2,6 +2,15 @@
 # license removed for brevity
 import rospy
 from sensor_msgs.msg import Joy
+from geometry_msgs.msg import Twist
+from std_msgs.msg import Empty
+
+# Controls for the XBOX One Bluetooth Controller
+
+
+# JOYSTICK AXES VALUES
+AXIS_MIN_VAL = -32767
+AXIS_MAX_VAL = 32767
 
 
 # JOYSTICK AXES INDEXES
@@ -13,6 +22,8 @@ R_STICK_Y = 4
 R_TRIGGER = 5
 L_CROSS_X = 6
 L_CROSS_Y = 7
+TRIGGERS  = 8
+
 
 # JOYSTICK BUTTONS INDEXES
 L_STICK_PRESS = 9
@@ -27,6 +38,11 @@ BTN_B = 1
 BTN_X = 2
 BTN_Y = 3
 
+
+
+pubLand = None
+pubTakeoff = None
+pub = None
 # def talker():
 #     pub = rospy.Publisher('chatter', String, queue_size=10)
 #     rospy.init_node('talker', anonymous=True)
@@ -36,7 +52,6 @@ BTN_Y = 3
 #         rospy.loginfo(hello_str)
 #         pub.publish(hello_str)
 #         rate.sleep()
-
 
 def callback(joy):
     """
@@ -48,11 +63,39 @@ def callback(joy):
         """
     axes = joy.axes
     buttons = joy.buttons
-    rospy.loginfo(rospy.get_caller_id() + "I heard %s", joy.axes)
-    rospy.loginfo(rospy.get_caller_id() + "I heard %s", joy.buttons)
+    rospy.logdebug(rospy.get_caller_id() + "I heard %s", joy.axes)
+    rospy.logdebug(rospy.get_caller_id() + "I heard %s", joy.buttons)
 
+    if(buttons[SELECT] and buttons[START]):
+        land = Empty()
+        rospy.loginfo(rospy.get_caller_id() + "  STOP !!")
+        pubLand.publish(land)
+        return
     if(buttons[SELECT]):
-        pub.publish(land)
+        land = Empty()
+        rospy.loginfo(rospy.get_caller_id() + "  LANDING")
+        pubLand.publish(land)
+        return
+    if(buttons[START]):
+        takeoff = Empty()
+        rospy.loginfo(rospy.get_caller_id() + "  TAKING OFF")
+        pubTakeoff.publish(takeoff)
+        return
+    
+    if(buttons[L_BUMPER] and buttons[BTN_X]):
+        rospy.loginfo(rospy.get_caller_id() + "  FLIP LEFT")
+        return
+    
+    cmd = Twist()
+
+    cmd.linear.x = axes[L_STICK_Y]
+    cmd.linear.y = axes[L_STICK_X]
+    cmd.linear.z = -axes[TRIGGERS]
+    cmd.angular.z = axes[R_STICK_X]
+    rospy.loginfo(rospy.get_caller_id() + " %f|%f|%f -- %f", cmd.linear.x, cmd.linear.y, cmd.linear.z, cmd.angular.z )
+    pub.publish(cmd)
+
+    
     
 def listener():
 
@@ -70,7 +113,9 @@ def listener():
 
 if __name__ == '__main__':
     try:
-        pub = rospy.Publisher('chatter', String, queue_size=10)
+        pubTakeoff = rospy.Publisher('bebop/takeoff', Empty, queue_size=1)
+        pubLand = rospy.Publisher('bebop/land', Empty, queue_size=1)
+        pub = rospy.Publisher('bebop/cmd_vel', Twist, queue_size=10)
         listener()
     except rospy.ROSInterruptException:
         pass
