@@ -42,6 +42,7 @@ BTN_Y = 3
 
 pubLand = None
 pubTakeoff = None
+pubTricks = None
 pub = None
 # def talker():
 #     pub = rospy.Publisher('chatter', String, queue_size=10)
@@ -115,7 +116,9 @@ if __name__ == '__main__':
     try:
         pubTakeoff = rospy.Publisher('bebop/takeoff', Empty, queue_size=1)
         pubLand = rospy.Publisher('bebop/land', Empty, queue_size=1)
+        pubTricks = rospy.Publisher('bebop/', Empty,queue_size=1)
         pub = rospy.Publisher('bebop/cmd_vel', Twist, queue_size=10)
+        
         listener()
     except rospy.ROSInterruptException:
         pass
