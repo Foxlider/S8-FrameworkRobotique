@@ -6,19 +6,6 @@ import math
 from sensor_msgs.msg import LaserScan
 from std_msgs.msg import Float32
 
-def min_sans_nan(tbl):
-    m = ""
-    index = 0
-    for i in range(len(tbl)):
-        if m == "" :
-            m = tbl[i]
-        elif tbl[i].isdigit():
-            if tbl[i] < m:
-                m = tbl[i]
-                index = i
-    
-    return m, index
-
 
 def callback(laserScanMsg):
 
@@ -41,6 +28,9 @@ def listener():
 
     # Keepalive
     rospy.spin()
+
+def main(args=None):
+    s
 
 
 if __name__ == '__main__':
