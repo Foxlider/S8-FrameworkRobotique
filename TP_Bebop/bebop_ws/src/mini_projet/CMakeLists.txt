@@ -53,6 +53,7 @@ find_package(catkin REQUIRED message_generation)
 add_service_files(
   FILES
   sentry_mode.srv
+  fun_mode.srv
 #   Service1.srv
 #   Service2.srv
 )
