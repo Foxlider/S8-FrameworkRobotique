@@ -6,8 +6,9 @@ import std_msgs.msg
 
 class AltitudePublisher():
     def __init__(self):
+        rospy.init_node('altitude', anonymous=True)
+
         self.pub = rospy.Publisher('altitude', std_msgs.msg.Float64, queue_size=10)
-        rospy.init_node('altitudePublisher', anonymous=True)
         rospy.Subscriber("/bebop/odom", nav_msgs.msg.Odometry, self.callback)
         rospy.spin()
 

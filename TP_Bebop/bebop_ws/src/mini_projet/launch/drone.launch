@@ -1,0 +1,5 @@
+<launch>
+  <node name="altitude_node" pkg="mini_projet" type="altitude.py" output="screen"></node>
+  <node name="control_node" pkg="mini_projet" type="control.py" output="screen"></node>
+  <node name="rqt_gui" pkg="rqt_gui" type="rqt_gui"/>
+</launch>
