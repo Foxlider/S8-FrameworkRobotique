@@ -7,7 +7,6 @@ from std_msgs.msg import Empty
 
 # Controls for the XBOX One Bluetooth Controller
 
-
 # JOYSTICK AXES VALUES
 AXIS_MIN_VAL = -32767
 AXIS_MAX_VAL = 32767
@@ -40,12 +39,6 @@ BTN_Y = 3
 
 
 
-pubLand = None
-pubTakeoff = None
-pubTricks = None
-pub = None
-
-
 
 
 class DroneControllerSim():
@@ -55,11 +48,12 @@ class DroneControllerSim():
         # Publishers
         self.pubTakeoff = rospy.Publisher('bebop/takeoff', Empty, queue_size=1)
         self.pubLand = rospy.Publisher('bebop/land', Empty, queue_size=1)
+        self.pubReset = rospy.Publisher('bebop/reset', Empty, queue_size=1)
         # pubTricks = rospy.Publisher('bebop/', Empty,queue_size=1)
         self.pub = rospy.Publisher('bebop/cmd_vel', Twist, queue_size=2)
 
         # Subscribers
-        self.sub = rospy.Subscriber("/bebop2/joy", Joy, self.callback, queue_size=2)
+        self.sub = rospy.Subscriber("/bebop2/joy", Joy, self.callback, queue_size=1)
 
     def callback(self, joy):
         """
@@ -75,9 +69,10 @@ class DroneControllerSim():
         rospy.logdebug(rospy.get_caller_id() + "I heard %s", joy.buttons)
 
         if(buttons[SELECT] and buttons[START]):
-            land = Empty()
+            reset = Empty()
             rospy.loginfo(rospy.get_caller_id() + "  STOP !!")
-            self.pubLand.publish(land)
+            self.pubReset.publish(reset)
+            rospy.sleep(1)
             return
         if(buttons[SELECT]):
             land = Empty()
