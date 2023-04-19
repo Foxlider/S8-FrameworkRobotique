@@ -6,8 +6,6 @@ from kobuki_msgs.msg import Sound
 
 
 
-
-
 class BumperSoundFeedback():
 
     def __init__(self):
