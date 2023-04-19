@@ -52,8 +52,23 @@ class DroneControllerSim():
         # pubTricks = rospy.Publisher('bebop/', Empty,queue_size=1)
         self.pub = rospy.Publisher('bebop/cmd_vel', Twist, queue_size=2)
 
+        self.sentry_mode_on = False
+
+        # Services
+        # self.sentryMode = rospy.Service("sentry_mode", SentryMode, self.sentry_mode_service)
+        # self.sentryMode = rospy.Service("fun_mode", FunMode, self.fun_mode_service)
+
         # Subscribers
         self.sub = rospy.Subscriber("/bebop2/joy", Joy, self.callback, queue_size=1)
+
+
+        # self.loop()
+
+    def loop(self):
+        while not rospy.is_shutdown():
+            self.rate = rospy.Rate(10)
+            self.rate.sleep()
+
 
     def callback(self, joy):
         """
@@ -63,38 +78,58 @@ class DroneControllerSim():
             :param  joy:    The incoming joy message.
 
         """
-        axes = joy.axes
-        buttons = joy.buttons
+        self.axes = joy.axes
+        self.buttons = joy.buttons
         rospy.logdebug(rospy.get_caller_id() + "I heard %s", joy.axes)
         rospy.logdebug(rospy.get_caller_id() + "I heard %s", joy.buttons)
 
-        if(buttons[SELECT] and buttons[START]):
+        # EMERGENCY RESET
+        if(self.buttons[SELECT] and self.buttons[START]):
             reset = Empty()
             rospy.loginfo(rospy.get_caller_id() + "  STOP !!")
             self.pubReset.publish(reset)
             rospy.sleep(1)
             return
-        if(buttons[SELECT]):
+        
+
+        # SENTRY MODE SWITCH
+        if(self.buttons[R_BUMPER]):
+            rospy.loginfo(rospy.get_caller_id() + "  SWITCH MODE")
+            self.sentry_mode_on = not self.sentry_mode_on
+            return
+
+        # LAND DRONE
+        if(self.buttons[SELECT]):
             land = Empty()
             rospy.loginfo(rospy.get_caller_id() + "  LANDING")
             self.pubLand.publish(land)
             return
-        if(buttons[START]):
+        
+        # START DRONE
+        if(self.buttons[START]):
             takeoff = Empty()
             rospy.loginfo(rospy.get_caller_id() + "  TAKING OFF")
             self.pubTakeoff.publish(takeoff)
             return
         
-        if(buttons[L_BUMPER] and buttons[BTN_X]):
+        # FUN COMMANDS
+        if(self.buttons[L_BUMPER] and self.buttons[BTN_X]):
             rospy.loginfo(rospy.get_caller_id() + "  FLIP LEFT")
             return
         
+        
+        # DRONE MOVEMENT
         cmd = Twist()
 
-        cmd.linear.x = axes[L_STICK_Y]
-        cmd.linear.y = axes[L_STICK_X]
-        cmd.linear.z = -axes[TRIGGERS]
-        cmd.angular.z = axes[R_STICK_X]
+        # sentry mode switch
+        if(self.sentry_mode_on):
+            cmd.angular.z = 0.5
+        else:
+            cmd.linear.x = self.axes[L_STICK_Y]
+            cmd.linear.y = self.axes[L_STICK_X]
+            cmd.linear.z = - self.axes[TRIGGERS]
+            cmd.angular.z = self.axes[R_STICK_X]
+
         rospy.loginfo(rospy.get_caller_id() + " %f|%f|%f -- %f", cmd.linear.x, cmd.linear.y, cmd.linear.z, cmd.angular.z )
         self.pub.publish(cmd)
 
