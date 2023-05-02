@@ -1,5 +1,7 @@
 # TP 1 : 
 
+## ROS 1
+
 `docker exec -it ros1 /bin/bash`
 
 `printenv | grep ROS`
@@ -22,7 +24,7 @@ root@61ff6befac41:~/projects/catkin_ws# echo $ROS_PACKAGE_PATH
 /root/projects/catkin_ws/src:/opt/ros/melodic/share
 ```
 
-## ROS commands
+### ROS commands
 
 ```bash
 root@61ff6befac41:~/projects/catkin_ws# rospack find roscpp
@@ -66,7 +68,7 @@ cpp_common/             message_filters/        ros_comm/               rosconso
 ```
 
 
-## Package making
+### Package making
 
 ```sh
 root@61ff6befac41:~/projects/catkin_ws# cd src/
@@ -106,7 +108,7 @@ roslib
 std_msgs
 ```
 
-## ROSCORE and NODES
+### ROSCORE and NODES
 
 ```bash
 triton_09@triton-09:~/catkin_ws$ roscore
@@ -265,9 +267,9 @@ average rate: 62.501
         min: 0.015s max: 0.017s std dev: 0.00049s window: 539
 ```
 
-## ROS Service
+### ROS Service
 
-### rosservice
+#### rosservice
 ```sh
 triton_09@triton-09:~/catkin_ws$ rosservice list
 /clear
@@ -292,7 +294,7 @@ triton_09@triton-09:~/catkin_ws$ rosservice type /clear
 std_srvs/Empty
 ```
 
-### ROSPARAM
+#### ROSPARAM
 
 ```sh
 triton_09@triton-09:~/catkin_ws$ rosparam list
@@ -330,7 +332,7 @@ turtlesim: {background_b: 255, background_g: 86, background_r: 150}
 triton_09@triton-09:~/catkin_ws$ 
 ```
 
-## RQT Console
+### RQT Console
 
 ```sh
 triton_09@triton-09:~/catkin_ws$ rosrun rqt_console rqt_console&
@@ -339,7 +341,70 @@ triton_09@triton-09:~/catkin_ws$ rosrun rqt_logger_level rqt_logger_level&
 [2] 16500
 ```
 
-## ROSED
+### ROSED
 
 Basiquement, osef. Ca ouvre `code` ou `vim`.  
 
+## ROS 2
+
+```sh
+ros2 pkg executables turtlesim
+ros2 run turtlesim turtlesim_node
+
+# rqt
+rqt
+rqt_graph
+
+# topic
+ros2 topic list -t
+ros2 topic echo /turtle1/cmd_vel
+
+# rosmsg
+ros2 interface show geometry_msgs/msg/Twist
+
+# topic
+ros2 topic pub --once /turtle1/cmd_vel geometry_msgs/msg/Twist "{linear: {x: 2.0, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 1.8}}"
+ros2 topic echo /turtle1/pose
+ros2 topic hz /turtle1/pose
+
+#services
+ros2 service list
+ros2 interface show turtlesim/srv/Spawn
+ros2 service call /clear std_srvs/srv/Empty
+
+
+# params
+ros2 param list
+ros2 param get /turtlesim background_g
+
+# load param file on node start
+ros2 run <package_name> <executable_name> --ros-args --params-file <file_name>
+
+# actions
+ros2 action list -t
+ros2 action send_goal /turtle1/rotate_absolute turtlesim/action/RotateAbsolute "{theta: 1.57}"
+
+# loglevel
+ros2 run turtlesim turtlesim_node --ros-args --log-level WARN
+```
+
+
+
+### colcon
+```sh
+mkdir -p ~/ros2_ws/src
+cd ~/ros2_ws
+colcon build --symlink-install
+colcon build --parallel-workers 2
+colcon build --packages-select my_package
+
+colcon test
+
+ros2 pkg create
+
+colcon test --packages-select YOUR_PKG_NAME --ctest-args -R YOUR_TEST_IN_PKG
+
+ros2 pkg create --build-type ament_cmake --node-name my_node my_package
+ros2 pkg create --build-type ament_python --node-name my_node my_package
+
+```

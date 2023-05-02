@@ -58,3 +58,9 @@ TP_Bebop/bebop_ws/src/bebop_autonomy/
 TP_Bebop/bebop_ws/src/parrot_arsdk/
 
 TP_Bebop/bebop_ws/.catkin_tools/
+
+
+
+Ros2Tello/build/
+Ros2Tello/install/
+Ros2Tello/log/
