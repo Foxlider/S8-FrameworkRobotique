@@ -147,6 +147,10 @@ class DroneController(Node):
                 self.get_logger().info("  TAKE OFF CANCELLED (TOO HIGH)")
                 return
             
+            if(self.bat < 10):
+                self.get_logger().info("  TAKE OFF CANCELLED (BATTERY LOW)")
+                return
+            
             if(self.is_taking_off):
                 self.get_logger().info("  TAKE OFF IN PROGRESS")
                 return

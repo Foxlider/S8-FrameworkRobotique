@@ -24,9 +24,26 @@ def generate_launch_description():
         ),
 
         # Tello control node
+        # Node(
+        #     package='tello_control',
+        #     executable='tello_control',
+        #     namespace='/',
+        #     name='control',
+        #     output='screen',
+        #     respawn=False
+        # ),
         Node(
-            package='tello_control',
-            executable='tello_control',
+            package='tello_joy',
+            executable='tello_joy',
+            namespace='/',
+            name='controller',
+            output='screen',
+            respawn=False
+        ),
+
+        Node(
+            package='joy',
+            executable='joy_node',
             namespace='/',
             name='control',
             output='screen',
@@ -34,35 +51,35 @@ def generate_launch_description():
         ),
 
         # RQT topic debug tool
-        Node(
-            package='rqt_gui',
-            executable='rqt_gui',
-            output='screen',
-            namespace='/',
-            name='rqt',
-            respawn=False
-        ),
+        # Node(
+        #     package='rqt_gui',
+        #     executable='rqt_gui',
+        #     output='screen',
+        #     namespace='/',
+        #     name='rqt',
+        #     respawn=False
+        # ),
 
         # RViz data visualization tool
-        Node(
-            package='rviz2',
-            executable='rviz2',
-            output='screen',
-            namespace='/',
-            name='rviz2',
-            respawn=True,
-            arguments=['-d', '/home/tentone/Git/tello-slam/workspace/src/rviz.rviz']
-        ),
+        # Node(
+        #     package='rviz2',
+        #     executable='rviz2',
+        #     output='screen',
+        #     namespace='/',
+        #     name='rviz2',
+        #     respawn=True,
+        #     arguments=['-d', '/home/tentone/Git/tello-slam/workspace/src/rviz.rviz']
+        # ),
 
         # Static TF publisher
-        Node(
-            package='tf2_ros',
-            executable='static_transform_publisher',
-            namespace='/',
-            name='tf',
-            arguments=['0', '0', '0', '0', '0', '0', '1', 'map', 'drone'],
-            respawn=True
-        ),
+        # Node(
+        #     package='tf2_ros',
+        #     executable='static_transform_publisher',
+        #     namespace='/',
+        #     name='tf',
+        #     arguments=['0', '0', '0', '0', '0', '0', '1', 'map', 'drone'],
+        #     respawn=True
+        # ),
 
         # ORB SLAM
         # Node(
