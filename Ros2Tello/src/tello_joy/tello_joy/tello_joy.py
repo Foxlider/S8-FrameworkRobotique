@@ -2,6 +2,7 @@
 import time
 import rclpy
 from rclpy.node import Node
+from enum import Enum
 
 from sensor_msgs.msg import Joy
 from std_msgs.msg import Empty
@@ -36,7 +37,11 @@ BTN_B = 1
 BTN_X = 2
 BTN_Y = 3
 
-
+class DroneMode(Enum):
+    CONTROL = 1
+    QR = 2
+    SPIELBERG = 3
+    SENTRY = 4
 class DroneController(Node):
     def __init__(self):
         super().__init__('trello_joy')
@@ -51,7 +56,7 @@ class DroneController(Node):
         self.pub = self.create_publisher(Twist, 'control', 1)
 
         self.speeds = MANUAL_SPEED
-        self.sentry_mode_on = False
+        self.mode = DroneMode.CONTROL
 
         # Services
         # self.sentryMode = rospy.Service("sentry_mode", SentryMode, self.sentry_mode_service)
@@ -89,9 +94,24 @@ class DroneController(Node):
         
 
         # SENTRY MODE SWITCH
-        if(self.buttons[R_BUMPER]):
+        if(self.buttons[R_BUMPER] and self.buttons[BTN_A]):
+            self.get_logger().info("  SWITCH MODE SENTRY")
+            self.mode = DroneMode.SENTRY
+            return
+        # SENTRY MODE SWITCH
+        if(self.buttons[R_BUMPER] and self.buttons[BTN_X]):
+            self.get_logger().info("  SWITCH MODE CONTROL")
+            self.mode = DroneMode.CONTROL
+            return
+        # SENTRY MODE SWITCH
+        if(self.buttons[R_BUMPER] and self.buttons[BTN_Y]):
             self.get_logger().info("  SWITCH MODE")
-            self.sentry_mode_on = not self.sentry_mode_on
+            self.mode = DroneMode.QR
+            return
+        # SENTRY MODE SWITCH
+        if(self.buttons[R_BUMPER] and self.buttons[BTN_B]):
+            self.get_logger().info("  SWITCH MODE CINEMATIC")
+            self.mode = DroneMode.SPIELBERG
             return
 
         # LAND DRONE
@@ -108,6 +128,12 @@ class DroneController(Node):
             self.get_logger().info("  TAKING OFF")
             self.pubTakeoff.publish(takeoff)
             time.sleep(1)
+            return
+        
+        if(self.axes[L_CROSS_Y] != 0):
+            self.speeds += self.axes[L_CROSS_Y] * 10
+            self.get_logger().info(f"  {self.speeds}")
+            time.sleep(0.1)
             return
         
         # FUN COMMANDS
@@ -140,26 +166,22 @@ class DroneController(Node):
             time.sleep(4)
             return
         
-        if(self.axes[L_CROSS_Y] != 0):
-            self.speeds += self.axes[L_CROSS_Y] * 10
-            self.get_logger().info(f"  {self.speeds}")
-            time.sleep(0.1)
-            return
+        
         
         
         # DRONE MOVEMENT
         cmd = Twist()
 
         # sentry mode switch
-        if(self.sentry_mode_on):
-            cmd.angular.z = 0.5
-        else:
+        if(self.mode == DroneMode.SENTRY):
+            cmd.angular.z = 0.5 * self.speeds
+        elif (self.mode == DroneMode.CONTROL):
             cmd.linear.x = - self.axes[L_STICK_X] * self.speeds
             cmd.linear.y = self.axes[L_STICK_Y]  * self.speeds
             cmd.linear.z = ((self.axes[L_TRIGGER] - self.axes[R_TRIGGER])/2 ) * MANUAL_SPEED
             cmd.angular.z = - self.axes[R_STICK_X] * self.speeds
 
-        self.get_logger().info(f" {cmd.linear.x}|{cmd.linear.y}|{cmd.linear.z} -- {cmd.angular.z}")
+        self.get_logger().debug(f" {cmd.linear.x}|{cmd.linear.y}|{cmd.linear.z} -- {cmd.angular.z}")
         self.pub.publish(cmd)
 
 
