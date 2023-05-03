@@ -7,6 +7,7 @@ from enum import Enum
 from sensor_msgs.msg import Joy
 from std_msgs.msg import Empty
 from std_msgs.msg import String
+from tello_msg.msg import TelloStatus
 from geometry_msgs.msg import Twist
 
 # SPEEDS
@@ -58,12 +59,19 @@ class DroneController(Node):
         self.speeds = MANUAL_SPEED
         self.mode = DroneMode.CONTROL
 
+        self.alt = 0
+        self.bat = 0
+        self.is_taking_off = False
+        self.is_landing = False
+
         # Services
         # self.sentryMode = rospy.Service("sentry_mode", SentryMode, self.sentry_mode_service)
         # self.sentryMode = rospy.Service("fun_mode", FunMode, self.fun_mode_service)
 
         # Subscribers
         self.sub = self.create_subscription(Joy, 'joy', self.callback, 1)
+        self.sub = self.create_subscription(TelloStatus, 'status', self.statuscallback, 1)
+
         self.get_logger().info("INIT DONE")
 
 
@@ -116,18 +124,39 @@ class DroneController(Node):
 
         # LAND DRONE
         if(self.buttons[SELECT]):
+
+            if(self.alt <= 10):
+                self.get_logger().info("  LANDING CANCELLED (TOO LOW)")
+                return
+            
+            if(self.is_landing):
+                self.get_logger().info("  LANDING IN PROGRESS")
+                return
+            
+            self.is_landing = True
+
             land = Empty()
             self.get_logger().info("  LANDING")
             self.pubLand.publish(land)
-            time.sleep(1)
             return
         
         # START DRONE
         if(self.buttons[START]):
+
+            if(self.alt > 10):
+                self.get_logger().info("  TAKE OFF CANCELLED (TOO HIGH)")
+                return
+            
+            if(self.is_taking_off):
+                self.get_logger().info("  TAKE OFF IN PROGRESS")
+                return
+            
+            self.is_taking_off = True
+            
             takeoff = Empty()
             self.get_logger().info("  TAKING OFF")
             self.pubTakeoff.publish(takeoff)
-            time.sleep(1)
+            
             return
         
         if(self.axes[L_CROSS_Y] != 0):
@@ -138,13 +167,26 @@ class DroneController(Node):
         
         # FUN COMMANDS
         if(self.buttons[L_BUMPER] and self.buttons[BTN_X]):
+
+            if(self.bat <= 50):
+                self.get_logger().info("  FLIP CANCELLED (LOW BATTERY)")
+                time.sleep(1)
+                return
+
             msg = String()
             msg.data = 'l'
             self.get_logger().info("  FLIP !")
             self.pubTricks.publish(msg)
             time.sleep(4)
             return
+        
         if(self.buttons[L_BUMPER] and self.buttons[BTN_Y]):
+
+            if(self.bat <= 50):
+                self.get_logger().info("  FLIP CANCELLED (LOW BATTERY)")
+                time.sleep(1)
+                return
+            
             msg = String()
             msg.data = 'f'
             self.get_logger().info("  FLIP !")
@@ -152,21 +194,32 @@ class DroneController(Node):
             time.sleep(4)
             return
         if(self.buttons[L_BUMPER] and self.buttons[BTN_B]):
+
+            if(self.bat <= 50):
+                self.get_logger().info("  FLIP CANCELLED (LOW BATTERY)")
+                time.sleep(1)
+                return
+            
             msg = String()
             msg.data = 'r'
             self.get_logger().info("  FLIP !")
             self.pubTricks.publish(msg)
             time.sleep(4)
             return
+        
         if(self.buttons[L_BUMPER] and self.buttons[BTN_A]):
+
+            if(self.bat <= 50):
+                self.get_logger().info("  FLIP CANCELLED (LOW BATTERY)")
+                time.sleep(1)
+                return
+            
             msg = String()
             msg.data = 'b'
             self.get_logger().info("  FLIP !")
             self.pubTricks.publish(msg)
             time.sleep(4)
             return
-        
-        
         
         
         # DRONE MOVEMENT
@@ -184,7 +237,21 @@ class DroneController(Node):
         self.get_logger().debug(f" {cmd.linear.x}|{cmd.linear.y}|{cmd.linear.z} -- {cmd.angular.z}")
         self.pub.publish(cmd)
 
+    # NOT FOOL PROOF BUT BETTER HANDLING TO AVOID CRASHES
+    def statuscallback(self, status):
+        self.alt = status.distance_tof
+        self.bat = status.battery
 
+        
+        if(self.is_taking_off):
+            self.get_logger().info("  TOOK OFF")
+            self.is_taking_off = False
+
+        if(self.is_landing):
+            self.get_logger().info("  LANDED")
+            self.is_landing = False 
+
+        self.get_logger().debug(f" {self.alt}|{self.bat}")
 
 
 def main(args=None):
