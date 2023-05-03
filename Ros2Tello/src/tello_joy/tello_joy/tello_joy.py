@@ -1,9 +1,11 @@
 #!/usr/bin/env python
+import time
 import rclpy
 from rclpy.node import Node
 
 from sensor_msgs.msg import Joy
 from std_msgs.msg import Empty
+from std_msgs.msg import String
 from geometry_msgs.msg import Twist
 
 # SPEEDS
@@ -39,15 +41,16 @@ class DroneController(Node):
     def __init__(self):
         super().__init__('trello_joy')
 
-        self.get_logger().info("INIT")
+        self.get_logger().info("INNIT")
 
         # Publishers
         self.pubTakeoff = self.create_publisher(Empty, 'takeoff', 1)
         self.pubLand = self.create_publisher(Empty, 'land', 1)
         self.pubReset = self.create_publisher(Empty, 'emergency', 1)
-        self.pubTricks = self.create_publisher(Empty, 'flip', 1)
+        self.pubTricks = self.create_publisher(String, 'flip', 1)
         self.pub = self.create_publisher(Twist, 'control', 1)
 
+        self.speeds = MANUAL_SPEED
         self.sentry_mode_on = False
 
         # Services
@@ -80,6 +83,7 @@ class DroneController(Node):
             reset = Empty()
             self.get_logger().info("  STOP !!")
             self.pubReset.publish(reset)
+            time.sleep(1)
             # rospy.sleep(1)
             return
         
@@ -95,6 +99,7 @@ class DroneController(Node):
             land = Empty()
             self.get_logger().info("  LANDING")
             self.pubLand.publish(land)
+            time.sleep(1)
             return
         
         # START DRONE
@@ -102,12 +107,43 @@ class DroneController(Node):
             takeoff = Empty()
             self.get_logger().info("  TAKING OFF")
             self.pubTakeoff.publish(takeoff)
+            time.sleep(1)
             return
         
         # FUN COMMANDS
         if(self.buttons[L_BUMPER] and self.buttons[BTN_X]):
-            self.get_logger().info("  FLIP LEFT")
-            self.pubTricks.publish(Empty())
+            msg = String()
+            msg.data = 'l'
+            self.get_logger().info("  FLIP !")
+            self.pubTricks.publish(msg)
+            time.sleep(4)
+            return
+        if(self.buttons[L_BUMPER] and self.buttons[BTN_Y]):
+            msg = String()
+            msg.data = 'f'
+            self.get_logger().info("  FLIP !")
+            self.pubTricks.publish(msg)
+            time.sleep(4)
+            return
+        if(self.buttons[L_BUMPER] and self.buttons[BTN_B]):
+            msg = String()
+            msg.data = 'r'
+            self.get_logger().info("  FLIP !")
+            self.pubTricks.publish(msg)
+            time.sleep(4)
+            return
+        if(self.buttons[L_BUMPER] and self.buttons[BTN_A]):
+            msg = String()
+            msg.data = 'b'
+            self.get_logger().info("  FLIP !")
+            self.pubTricks.publish(msg)
+            time.sleep(4)
+            return
+        
+        if(self.axes[L_CROSS_Y] != 0):
+            self.speeds += self.axes[L_CROSS_Y] * 10
+            self.get_logger().info(f"  {self.speeds}")
+            time.sleep(0.1)
             return
         
         
@@ -118,10 +154,10 @@ class DroneController(Node):
         if(self.sentry_mode_on):
             cmd.angular.z = 0.5
         else:
-            cmd.linear.x = self.axes[L_STICK_X] * MANUAL_SPEED
-            cmd.linear.y = self.axes[L_STICK_Y]  * MANUAL_SPEED
+            cmd.linear.x = - self.axes[L_STICK_X] * self.speeds
+            cmd.linear.y = self.axes[L_STICK_Y]  * self.speeds
             cmd.linear.z = ((self.axes[L_TRIGGER] - self.axes[R_TRIGGER])/2 ) * MANUAL_SPEED
-            cmd.angular.z = - self.axes[R_STICK_X] * MANUAL_SPEED
+            cmd.angular.z = - self.axes[R_STICK_X] * self.speeds
 
         self.get_logger().info(f" {cmd.linear.x}|{cmd.linear.y}|{cmd.linear.z} -- {cmd.angular.z}")
         self.pub.publish(cmd)
