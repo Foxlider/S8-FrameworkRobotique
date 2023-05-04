@@ -5,8 +5,7 @@ from rclpy.node import Node
 from enum import Enum
 
 from sensor_msgs.msg import Joy
-from std_msgs.msg import Empty
-from std_msgs.msg import String
+from std_msgs.msg import Empty, String, Bool
 from tello_msg.msg import TelloStatus
 from geometry_msgs.msg import Twist
 
@@ -55,6 +54,9 @@ class DroneController(Node):
         self.pubReset = self.create_publisher(Empty, 'emergency', 1)
         self.pubTricks = self.create_publisher(String, 'flip', 1)
         self.pub = self.create_publisher(Twist, 'control', 1)
+
+        # Publisher de communication avec le node QR
+        self.pubQR = self.create_publisher(Bool, 'qr', 1)
 
         self.speeds = MANUAL_SPEED
         self.mode = DroneMode.CONTROL
@@ -113,7 +115,7 @@ class DroneController(Node):
             return
         # SENTRY MODE SWITCH
         if(self.buttons[R_BUMPER] and self.buttons[BTN_Y]):
-            self.get_logger().info("  SWITCH MODE")
+            self.get_logger().info("  SWITCH MODE FOLLOW")
             self.mode = DroneMode.QR
             return
         # SENTRY MODE SWITCH
@@ -125,9 +127,9 @@ class DroneController(Node):
         # LAND DRONE
         if(self.buttons[SELECT]):
 
-            if(self.alt <= 10):
-                self.get_logger().info("  LANDING CANCELLED (TOO LOW)")
-                return
+            # if(self.alt <= 10):
+            #     self.get_logger().info("  LANDING CANCELLED (TOO LOW)")
+            #     return
             
             if(self.is_landing):
                 self.get_logger().info("  LANDING IN PROGRESS")
@@ -143,9 +145,9 @@ class DroneController(Node):
         # START DRONE
         if(self.buttons[START]):
 
-            if(self.alt > 10):
-                self.get_logger().info("  TAKE OFF CANCELLED (TOO HIGH)")
-                return
+            # if(self.alt > 10):
+            #     self.get_logger().info("  TAKE OFF CANCELLED (TOO HIGH)")
+            #     return
             
             if(self.bat < 10):
                 self.get_logger().info("  TAKE OFF CANCELLED (BATTERY LOW)")
@@ -230,13 +232,40 @@ class DroneController(Node):
         cmd = Twist()
 
         # sentry mode switch
-        if(self.mode == DroneMode.SENTRY):
+        if self.mode == DroneMode.SENTRY:
+            # Emission sur le topic QR un message false
+            msg = Bool()
+            msg.data = False
+            self.pubQR.publish(msg)
+
             cmd.angular.z = 0.5 * self.speeds
-        elif (self.mode == DroneMode.CONTROL):
+
+        elif self.mode == DroneMode.CONTROL:
+            # Emission sur le topic QR un message false
+            msg = Bool()
+            msg.data = False
+            self.pubQR.publish(msg)
+            
             cmd.linear.x = - self.axes[L_STICK_X] * self.speeds
             cmd.linear.y = self.axes[L_STICK_Y]  * self.speeds
             cmd.linear.z = ((self.axes[L_TRIGGER] - self.axes[R_TRIGGER])/2 ) * MANUAL_SPEED
             cmd.angular.z = - self.axes[R_STICK_X] * self.speeds
+
+        elif self.mode == DroneMode.QR:
+            # Emission sur le topic QR un message false
+            msg = Bool()
+            msg.data = True
+            self.pubQR.publish(msg)
+
+        elif self.mode == DroneMode.SPIELBERG:
+            # Emission sur le topic QR un message false
+            msg = Bool()
+            msg.data = False
+            self.pubQR.publish(msg)
+
+            # Make the drone gor forward + rotate without pressing any button
+            cmd.linear.x = -0.5 * 30
+            cmd.angular.z = 0.5 * 30
 
         self.get_logger().debug(f" {cmd.linear.x}|{cmd.linear.y}|{cmd.linear.z} -- {cmd.angular.z}")
         self.pub.publish(cmd)
